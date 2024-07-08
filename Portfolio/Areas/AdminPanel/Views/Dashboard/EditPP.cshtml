@@ -1,0 +1,21 @@
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+@{
+    ViewData["Title"] = "EditPP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ProfileImage
+<h1>EditPP</h1>
+
+<form method="post">
+    <div class="container">
+        <div>
+            <label>Image</label>
+            <input type="text" class="form-control" asp-for="UrlImage" placeholder="URL">
+
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

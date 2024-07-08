@@ -1,0 +1,27 @@
+﻿@using Portfolio.Models
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+@{
+    ViewData["Title"] = "EditName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model NameSurnameEntity
+<h1>EditName</h1>
+
+<form method="post">
+    <div class="container">
+        <div>
+            <label  >Name</label>
+            <input type="text" class="form-control" asp-for="Name"    placeholder="Name">
+
+        </div>
+        <div class="form-group">
+            <label>Surname</label>
+            <input type="text" class="form-control" asp-for="Surname" placeholder="Surname">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

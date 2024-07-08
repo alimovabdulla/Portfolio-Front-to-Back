@@ -1,0 +1,48 @@
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+@{
+    ViewData["Title"] = "EditLanguages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model LgProsent
+<h1>EditLanguages</h1>
+
+
+<form method="post">
+    <div class="container">
+        <div>
+            <label>Language-1</label>
+            <input type="text" class="form-control" asp-for="Language1" placeholder="Language">
+
+        </div>
+        <div>
+            <label>Prosent-1</label>
+            <input type="text" class="form-control" asp-for="Prosent1" placeholder="Prosent">
+
+        </div>
+        <div>
+            <label>Language-2</label>
+            <input type="text" class="form-control" asp-for="Language2" placeholder="Language">
+
+        </div>
+        <div>
+            <label>Prosent-2</label>
+            <input type="text" class="form-control" asp-for="Prosent2" placeholder="Prosent">
+
+        </div>
+        <div>
+            <label>Language-3</label>
+            <input type="text" class="form-control" asp-for="Language3" placeholder="Language">
+
+        </div>
+        <div>
+            <label>Prosent-3</label>
+            <input type="text" class="form-control" asp-for="Prosent3" placeholder="Prosent">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
