@@ -1,0 +1,31 @@
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+@{
+    ViewData["Title"] = "EditYhp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model YHP
+<h1>EditYhp</h1>
+
+<form method="post">
+    <div class="container">
+        <div>
+            <label>Years</label>
+            <input type="text" class="form-control" asp-for="Years" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Hours</label>
+            <input type="text" class="form-control" asp-for="Hours" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Projects</label>
+            <input type="text" class="form-control" asp-for="Project" placeholder="URL">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

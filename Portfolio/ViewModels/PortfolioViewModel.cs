@@ -10,5 +10,6 @@ namespace Portfolio.ViewModels
         public List<LgProsent>  lgProsents { get; set; }
         public List<YHP> yhp { get; set; }
         public List < ProfileImage> profileImage { get; set; }
+        public List<PortfolioProject> portfolioProject { get; set; }
     }
 }

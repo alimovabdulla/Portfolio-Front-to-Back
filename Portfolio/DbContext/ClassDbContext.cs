@@ -16,6 +16,7 @@ namespace Portfolio.DbContext
         public DbSet<LgProsent>  lgProsents { get; set; }
         public DbSet <YHP> yHPs { get; set; }
         public DbSet<ProfileImage> profileImages { get; set; }
+        public DbSet<PortfolioProject>  portfolioProjects { get; set; }
 
     }
 

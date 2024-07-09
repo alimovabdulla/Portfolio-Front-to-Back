@@ -489,89 +489,29 @@
                         <div class="row g-4 portfolio-grid">
                             <!-- Portfolio Item 1 -->
                             <div class="col-12 col-xl-6 portfolio-item category-1">
-                                <div class="portfolio-box">
-                                    <!-- Image -->
-                                    <img src="~/images/Design_Web_jpg by Tomasz Mazurczak.jpeg"
-                                         alt=""
-                                         data-rjs="2" />
-                                    <!-- Category -->
-                                    <span style="
+                               @foreach (var item in Model.portfolioProject)
+                                {
+                                    <div class="portfolio-box">
+                                        <!-- Image -->
+                                        <img src="@item.ImageUrl"
+                                             alt=""
+                                             data-rjs="2" />
+                                        <!-- Category -->
+                                        <span style="
 												font-family: Emblema One, system-ui;
 												font-weight: 400;
 												font-style: normal;
-                                            "
-                                          class="portfolio-category">Branding</span>
-                                    <!-- Caption -->
-                                    <div class="portfolio-caption">
-                                        <h1><a href=" ">Glasses of Cocktail</a></h1>
+                                                "
+                                              class="portfolio-category">Branding</span>
+                                        <!-- Caption -->
+                                        <div class="portfolio-caption">
+                                            <h1><a href="@item.Href">@item.ImageText</a></h1>
+                                        </div>
                                     </div>
-                                </div>
+                                }
                                 <!-- end portfolio-box -->
                             </div>
-                            <!-- Portfolio Item 2 -->
-                            <div class="col-12 col-xl-6 portfolio-item category-2">
-                                <div class="portfolio-box">
-                                    <!-- Image -->
-                                    <img src="~/images/Europe - Documentary Series Landing Page.jpeg"
-                                         alt=""
-                                         data-rjs="2" />
-                                    <!-- Category -->
-                                    <span style="
-												font-family: Emblema One, system-ui;
-												font-weight: 400;
-												font-style: normal;
-                                            "
-                                          class="portfolio-category">Mockup</span>
-                                    <!-- Caption -->
-                                    <div class="portfolio-caption">
-                                        <h1><a href="">A Branch with Flowers</a></h1>
-                                    </div>
-                                </div>
-                                <!-- end portfolio-box -->
-                            </div>
-                            <!-- Portfolio Item 3 -->
-                            <div class="col-12 col-xl-6 portfolio-item category-2">
-                                <div class="portfolio-box">
-                                    <!-- Image -->
-                                    <img src="~/images/57540eb6-ae80-4f8d-9513-5abe5f8e244f.jpeg"
-                                         alt=""
-                                         data-rjs="2" />
-                                    <!-- Category -->
-                                    <span style="
-												font-family: Emblema One, system-ui;
-												font-weight: 400;
-												font-style: normal;
-                                            "
-                                          class="portfolio-category">Mockup</span>
-                                    <!-- Caption -->
-                                    <div class="portfolio-caption">
-                                        <h1><a href="">Orange Rose Flower</a></h1>
-                                    </div>
-                                </div>
-                                <!-- end portfolio-box -->
-                            </div>
-                            <!-- Portfolio Item 4 -->
-                            <div class="col-12 col-xl-6 portfolio-item category-1">
-                                <div class="portfolio-box">
-                                    <!-- Image -->
-                                    <img src="~/images/83af7118-f45d-47fe-a32e-f01e553b2883.jpeg"
-                                         alt=""
-                                         data-rjs="2" />
-                                    <!-- Category -->
-                                    <span style="
-												font-family: Emblema One, system-ui;
-												font-weight: 400;
-												font-style: normal;
-                                            "
-                                          class="portfolio-category">Branding</span>
-                                    <!-- Caption -->
-                                    <div class="portfolio-caption">
-                                        <h1><a href="">Green Plant on a Desk</a></h1>
-                                    </div>
-                                </div>
-                                <!-- end portfolio-box -->
-                            </div>
-                            <!-- end Portfolio Item 4 -->
+                           
                         </div>
                         <!-- end row -->
                     </div>

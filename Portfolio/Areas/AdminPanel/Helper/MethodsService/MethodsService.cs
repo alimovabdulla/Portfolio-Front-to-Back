@@ -79,6 +79,50 @@ namespace Portfolio.Areas.AdminPanel.Helper.MethodsService
             }
         }
 
- 
+        public AboutMeTextEntity GetAboutText(int id)
+        {
+            return _classDbContext.AboutMeText.FirstOrDefault(x => x.Id == id);
+
+        }
+
+        public void UpdateAboutText(AboutMeTextEntity newabout)
+        {
+
+            AboutMeTextEntity old = _classDbContext.AboutMeText.FirstOrDefault(x => x.Id == newabout.Id);
+            old.Text = newabout.Text;
+            _classDbContext.SaveChanges();
+
+        }
+
+        public YHP GetYhp(int id)
+        {
+            return _classDbContext.yHPs.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void UpdateYhp(YHP newyhp)
+        {
+
+            YHP old = _classDbContext.yHPs.FirstOrDefault(x => x.Id == newyhp.Id);
+            old.Project = newyhp.Project;
+            old.Years = newyhp.Years;
+            old.Hours = newyhp.Hours;
+            _classDbContext.SaveChanges();
+        }
+
+        public PortfolioProject GetPortfolioProject(int id)
+        {
+            return _classDbContext.portfolioProjects.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void UpdatePortfolioProject(PortfolioProject newportfolioproject)
+        {
+
+            PortfolioProject old = _classDbContext.portfolioProjects.FirstOrDefault(x => x.Id == newportfolioproject.Id);
+            old.Href = newportfolioproject.Href;
+            old.ImageUrl = newportfolioproject.ImageUrl;
+            old.ImageText = newportfolioproject.ImageText;
+             _classDbContext.SaveChanges();
+        }
+        
     }
 }

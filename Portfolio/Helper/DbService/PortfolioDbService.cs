@@ -22,7 +22,9 @@ namespace Portfolio.Helper.DbService
                 AboutMe = _dbContext.AboutMe.ToList(),
                 AboutMeText = _dbContext.AboutMeText.ToList(),
                 yhp = _dbContext.yHPs.ToList(),
-                profileImage = _dbContext.profileImages.ToList()
+                profileImage = _dbContext.profileImages.ToList(),
+                portfolioProject  = _dbContext.portfolioProjects.ToList()
+                
                
 
             };
