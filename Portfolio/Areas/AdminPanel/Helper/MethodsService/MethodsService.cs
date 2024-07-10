@@ -121,8 +121,35 @@ namespace Portfolio.Areas.AdminPanel.Helper.MethodsService
             old.Href = newportfolioproject.Href;
             old.ImageUrl = newportfolioproject.ImageUrl;
             old.ImageText = newportfolioproject.ImageText;
-             _classDbContext.SaveChanges();
+            _classDbContext.SaveChanges();
         }
-        
+        public LatestsEntity GetLatestText(int id)
+        {
+            return _classDbContext.latestWorksText.FirstOrDefault(x => x.Id == x.Id);
+        }
+
+        public void UpdateLatests(LatestsEntity newtextEntity)
+        {
+            LatestsEntity old = _classDbContext.latestWorksText.FirstOrDefault(x => x.Id == newtextEntity.Id);
+            old.Text = newtextEntity.Text;
+
+            _classDbContext.SaveChanges();
+        }
+         
+   
+    
+    
+    
     }
+
+
+
+
+
+
+
+
+
+
+
 }

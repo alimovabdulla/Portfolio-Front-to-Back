@@ -1,0 +1,100 @@
+﻿@using Portfolio.ViewModels
+@model PortfolioViewModel
+
+<div class="section-box mt-4" id="portfolio">
+    <div class="row">
+        <div class="col-12 col-md-10 col-xl-8">
+            <h6 style="
+											font-family: Permanent Marker, cursive;
+											font-weight: 400;
+											font-style: normal;
+                                        "
+                class="title-heading mb-3"
+                data-backdrop-text="Portfolio">
+                Portfolio
+            </h6>
+            <h1 style="
+											font-family: Rubik Doodle Shadow, system-ui;
+											font-weight: 400;
+											font-style: normal;
+                                        ">
+                My Latest Works
+            </h1>
+            @foreach (var item in Model.latestWorks)
+            {
+                <p style="
+											font-family: Baskervville SC, serif;
+											font-weight: 400;
+											font-style: normal;
+                                                    "
+                   class="mt-1">
+                    @item.Text
+                </p>
+                <a class="btn btn-primary" asp-action="EditWorks" asp-route-id="@item.Id">Edit</a>
+
+            }
+        </div>
+    </div>
+    <div class="filter mt-4 mt-lg-5 mb-3">
+        <ul>
+            <li style="
+											font-family: Emblema One, system-ui;
+											font-weight: 400;
+											font-style: normal;
+                                        "
+                data-filter="all">
+                Show All
+            </li>
+            <li style="
+											font-family: Emblema One, system-ui;
+											font-weight: 400;
+											font-style: normal;
+                                        "
+                data-filter=".category-1">
+                Branding
+            </li>
+            <li style="
+											font-family: Emblema One, system-ui;
+											font-weight: 400;
+											font-style: normal;
+                                        "
+                data-filter=".category-2">
+                Mockup
+            </li>
+        </ul>
+    </div>
+    <div class="row g-4 portfolio-grid">
+        <!-- Portfolio Item -->
+        @foreach (var item in Model.portfolioProject)
+        {
+            <div class="col-12 col-xl-6 portfolio-item category-1">
+                <div class="portfolio-box">
+                    <!-- Image -->
+                    <img src="@item.ImageUrl"
+                         alt=""
+                         data-rjs="2" />
+                    <!-- Category -->
+                    <span style="
+                        font-family: Emblema One, system-ui;
+                        font-weight: 400;
+                        font-style: normal;
+                                                    "
+                          class="portfolio-category">@item.Category</span>
+                    <!-- Caption -->
+                    <div class="portfolio-caption">
+                        <h1><a href="@item.Href">@item.ImageText</a></h1>
+                    </div>
+                </div>
+                <!-- Action Buttons -->
+                <a class="btn btn-danger" asp-action="DeletePortfolio" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn-primary" asp-action="EditPortfolio" asp-route-id="@item.Id">Edit</a>
+            </div>
+        }
+    </div>
+
+
+</div>
+<!-- end row -->
+<a class="btn btn-success" asp-action="CreatePortfolio">Create</a>
+                </div>
+<!-- end section-box -->

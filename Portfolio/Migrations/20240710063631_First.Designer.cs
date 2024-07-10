@@ -12,8 +12,8 @@ using Portfolio.DbContext;
 namespace Portfolio.Migrations
 {
     [DbContext(typeof(ClassDbContext))]
-    [Migration("20240709094120_CategoryCreated")]
-    partial class CategoryCreated
+    [Migration("20240710063631_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -256,6 +256,23 @@ namespace Portfolio.Migrations
                     b.ToTable("AboutMeText");
                 });
 
+            modelBuilder.Entity("Portfolio.Models.LatestsEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("latestWorksText");
+                });
+
             modelBuilder.Entity("Portfolio.Models.LgProsent", b =>
                 {
                     b.Property<int>("Id")
@@ -358,6 +375,23 @@ namespace Portfolio.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("profileImages");
+                });
+
+            modelBuilder.Entity("Portfolio.Models.ServiceTxtEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("serviceTxt");
                 });
 
             modelBuilder.Entity("Portfolio.Models.YHP", b =>

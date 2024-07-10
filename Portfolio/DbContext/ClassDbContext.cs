@@ -10,6 +10,8 @@ namespace Portfolio.DbContext
         {
 
         }
+        public DbSet<LatestsEntity> latestWorksText { get; set; }
+ 
         public DbSet<AboutMeEntity> AboutMe { get; set; }
         public DbSet<AboutMeTextEntity> AboutMeText { get; set; }
         public DbSet<NameSurnameEntity> NameSurname { get; set; }
@@ -17,7 +19,6 @@ namespace Portfolio.DbContext
         public DbSet <YHP> yHPs { get; set; }
         public DbSet<ProfileImage> profileImages { get; set; }
         public DbSet<PortfolioProject>  portfolioProjects { get; set; }
-
     }
 
 }

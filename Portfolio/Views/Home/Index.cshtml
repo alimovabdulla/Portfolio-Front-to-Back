@@ -443,18 +443,17 @@
                                         ">
                                     My Latest Works
                                 </h1>
-                                <p style="
+                              @foreach (var item in Model.latestWorks)
+                                {
+                                    <p style="
 											font-family: Baskervville SC, serif;
 											font-weight: 400;
 											font-style: normal;
-                                        "
-                                   class="mt-1">
-                                    I’ve recently completed projects that showcase my expertise
-                                    in web development and design. From interactive websites to
-                                    custom applications, each project reflects a commitment to
-                                    quality and innovation. Explore my portfolio to see how I
-                                    bring ideas to life through technology and creativity.
-                                </p>
+                                            "
+                                       class="mt-1">
+                                       @item.Text
+                                    </p>
+                                }
                             </div>
                         </div>
                         <div class="filter mt-4 mt-lg-5 mb-3">
@@ -537,18 +536,16 @@
                                         ">
                                     What I Do
                                 </h1>
-                                <p style="
+                                 
+                                    <p style="
 											font-family: Baskervville SC, serif;
 											font-weight: 400;
 											font-style: normal;
-                                        "
-                                   class="mt-1">
-                                    I'm a full-stack developer and freelancer with two years of
-                                    experience. My skills include C#, MSSQL, MySQL, CSS, HTML,
-                                    and JavaScript. I am passionate about creating websites and
-                                    applications, as well as optimizing content for SEO. I am
-                                    always open to learning new technologies.
-                                </p>
+                                            "
+                                       class="mt-1">
+                                       item.Text
+                                    </p>
+                               
                             </div>
                         </div>
                         <div class="mt-4 mt-lg-5">

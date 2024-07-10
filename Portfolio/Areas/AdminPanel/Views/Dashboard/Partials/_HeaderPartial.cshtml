@@ -1,0 +1,50 @@
+﻿@using Portfolio.ViewModels
+@model PortfolioViewModel
+<div id="header">
+    <div class="row">
+        <div class="col-12 col-lg-4 col-xl-3 order-lg-2 text-end">
+            <div class="d-inline-flex align-items-center">
+                <!-- Social Links -->
+                <ul class="list-inline d-inline-block mono-heading fw-medium">
+                    <li>
+                        <a class="link-decoration" href="#">FB</a>
+                    </li>
+                    <li>
+                        <a class="link-decoration" href="#">TW</a>
+                    </li>
+                    <li>
+                        <a class="link-decoration" href="#">IG</a>
+                    </li>
+                    <li>
+                        <a class="link-decoration" href="#">In</a>
+                    </li>
+                </ul>
+                <!-- Toggle Menu Button -->
+                <button class="menu-dots">
+                    <span></span>
+                </button>
+                <!-- end Toggle Menu Button -->
+            </div>
+        </div>
+        <!-- end col -->
+        <div class="col-12 col-lg-8 order-lg-1 col-xl-9">
+            <div class="py-4">
+                @foreach (var item in Model.nameSurname)
+                {
+                    <h1 style="
+									font-family: Neonderthaw, cursive;
+									font-weight: 400;
+									font-style: normal;
+                                                                            "
+                        class="display-2 fw-semi-bold m-0">
+                        @item.Name <span class="stroke-text">@item.Surname</span>
+                        <a class="btn btn-primary" asp-action="EditName" asp-route-id="@item.Id">Edit</a>
+                    </h1>
+                }
+
+            </div>
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+</div>

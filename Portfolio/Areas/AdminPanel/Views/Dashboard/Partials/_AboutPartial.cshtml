@@ -1,0 +1,133 @@
+﻿@using Portfolio.ViewModels
+@model PortfolioViewModel
+<div class="section-box" id="about">
+    <div class="row g-4 g-xl-5">
+        <div class="col-12 col-xl-4">
+            <!-- Hero Avatar -->
+            @foreach (var item in Model.profileImage)
+            {
+                <div class="hero-avatar">
+                    <img src="@item.UrlImage"
+                         alt=""
+                         data-rjs="2" />
+                    <div class="hero-avatar-text">
+                        <span class="typer"
+                              id="typer1"
+                              data-words="Hi There!, I'm  Abdullah"
+                              data-delay="50"
+                              data-EditDelay="1500"></span><span class="cursor" data-owner="typer1"></span>
+                    </div>
+                    <a class="btn btn-primary" asp-action="EditPP" asp-route-id="@item.Id">Edit</a>
+                </div>
+            }
+            <!-- end Hero Avatar -->
+        </div>
+        <div class="col-12 col-xl-8">
+            <h6 style="
+											font-family: Permanent Marker, cursive;
+											font-weight: 400;
+											font-style: normal;
+                                        "
+                class="title-heading mb-4"
+                data-backdrop-text="About Me">
+                About Me
+            </h6>
+            @foreach (var item in Model.AboutMe)
+            {
+                <h1 style="
+											font-family: Rubik Doodle Shadow, system-ui;
+											font-weight: 400;
+											font-style: normal;
+                                                                                ">
+                    @item.Text
+                    <a class="btn btn-primary" asp-action="EditAbout" asp-route-id="@item.Id">Edit</a>
+                </h1>
+            }
+            @foreach (var item in Model.lgProsents)
+            {
+                <ul class="list-inline-pills mt-3">
+                    <li>
+                        <i class="fa-solid fa-code pe-2"></i> @item.Language1
+                        <div class="d-inline-block font-family-mono font-small">
+                            (<span class="counter">@item.Prosent1</span>%)
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-bootstrap pe-2"></i> @item.Language2
+                        <div class="d-inline-block font-family-mono font-small">
+                            (<span class="counter">@item.Prosent2</span>%)
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-magnifying-glass pe-2"></i> @item.Language3
+                        <div class="d-inline-block font-family-mono font-small">
+                            (<span class="counter">@item.Prosent3</span>%)
+                        </div>
+                    </li>
+                    <a class="btn btn-primary" asp-action="EditLanguages" asp-route-id="@item.Id">Edit</a>
+                </ul>
+            }
+
+            @foreach (var item in Model.AboutMeText)
+            {
+                <p style="
+											font-family: Baskervville SC, serif;
+											font-weight: 400;
+											font-style: normal;
+                                                                                        "
+                   class="mt-1">
+                    @item.Text
+                    <a class="btn btn-primary" asp-action="EditAboutTxt" asp-route-id="@item.Id">Edit</a>
+                </p>
+            }
+        </div>
+    </div>
+    <!-- end row -->
+    @foreach (var item in Model.yhp)
+    {
+        <div class="row g-4 mt-1">
+            <div class="col-12 col-xl-4">
+                <div class="d-flex align-items-center">
+                    <div class="d-inline-block">
+                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                            <span class="counter">@item.Years</span>
+                        </h1>
+                    </div>
+                    <div class="d-inline-block ps-2">
+                        <h4 class="line-height-100 fw-normal mb-0">+</h4>
+                        <p class="mono-heading">Years of Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-4">
+                <div class="d-flex align-items-center">
+                    <div class="d-inline-block">
+                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                            <span class="counter">@item.Hours</span>
+                        </h1>
+                    </div>
+                    <div class="d-inline-block ps-2">
+                        <h4 class="line-height-100 fw-normal mb-0">k</h4>
+                        <p class="mono-heading">Hours of Working</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-4">
+                <div class="d-flex align-items-center">
+                    <div class="d-inline-block">
+                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                            <span class="counter">@item.Project</span>
+                        </h1>
+                    </div>
+                    <div class="d-inline-block ps-2">
+                        <h4 class="line-height-100 fw-normal mb-0">+</h4>
+                        <p class="mono-heading">Projects Done</p>
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-primary" asp-action="EditYhp" asp-route-id="@item.Id">Edit</a>
+        </div>
+    }
+    <!-- end row -->
+</div>
+<!-- end section-box -->

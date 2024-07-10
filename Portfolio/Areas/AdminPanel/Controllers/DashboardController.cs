@@ -123,6 +123,7 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
         }
+        [HttpGet]
         public IActionResult DeletePortfolio(int id)
         {
             PortfolioProject portfolioProject = _classDbContext.portfolioProjects.FirstOrDefault(p => p.Id == id);
@@ -130,8 +131,19 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
         }
-
-
+        [HttpGet]
+        public IActionResult EditWorks(int id)
+        {
+            LatestsEntity exiting = _methodsService.GetLatestText(id);
+            return View(exiting);
+        }
+        [HttpPost]
+        public IActionResult EditWorks(LatestsEntity newtextEntity)
+        {
+            _methodsService.UpdateLatests(newtextEntity);
+            return RedirectToAction("Edit");
+        }
+       
     }
 
 }

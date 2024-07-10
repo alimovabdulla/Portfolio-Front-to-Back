@@ -23,9 +23,12 @@ namespace Portfolio.Helper.DbService
                 AboutMeText = _dbContext.AboutMeText.ToList(),
                 yhp = _dbContext.yHPs.ToList(),
                 profileImage = _dbContext.profileImages.ToList(),
-                portfolioProject  = _dbContext.portfolioProjects.ToList()
-                
+                portfolioProject  = _dbContext.portfolioProjects.ToList(),
+                latestWorks = _dbContext.latestWorksText.ToList()
                
+                
+
+
 
             };
 

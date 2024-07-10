@@ -1,0 +1,80 @@
+﻿@using Portfolio.ViewModels
+@model PortfolioViewModel
+<div class="section-box mt-4" id="contact">
+    <div class="row">
+        <div class="col-12 col-md-10 col-xl-8">
+            <h6 style="
+											font-family: Permanent Marker, cursive;
+											font-weight: 400;
+											font-style: normal;
+                                        "
+                class="title-heading mb-3"
+                data-backdrop-text="Contact">
+                Get In Touch
+            </h6>
+            <h1 style="
+											font-family: Rubik Doodle Shadow, system-ui;
+											font-weight: 400;
+											font-style: normal;
+                                        ">
+                Let's Connect
+            </h1>
+            <p style="
+													font-family: Baskervville SC, serif;
+													font-weight: 400;
+													font-style: normal;
+                                                ">
+                I'm eager to collaborate on new projects. Feel free to reach
+                out with any ideas or questions. Looking forward to
+                connecting!
+            </p>
+            <ul class="list-inline-pills mt-4">
+                <li>Phone: +994 77 524 70 83</li>
+                <li>Email: abdullaalimov555@gmail.com</li>
+                <li>Address: 127.0.0.1</li>
+            </ul>
+        </div>
+    </div>
+    <!-- end row -->
+    <div class="mt-4 mt-lg-5">
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form method="post" id="contactform">
+                <div class="row gx-3 gy-0">
+                    <div class="col-12 col-md-6">
+                        <input type="text"
+                               id="name"
+                               name="name"
+                               placeholder="Name"
+                               required />
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="E-Mail"
+                               required />
+                    </div>
+                </div>
+                <input type="text"
+                       id="subject"
+                       name="subject"
+                       placeholder="Subject"
+                       required />
+                <textarea name="message"
+                          id="message"
+                          placeholder="Message"></textarea>
+                <button class="button button-md" type="submit">
+                    Send Message
+                </button>
+            </form>
+            <!-- Submit result -->
+            <div class="submit-result">
+                <span id="success">Thank you! Your Message has been sent.</span>
+                <span id="error">Something went wrong, Please try again!</span>
+            </div>
+        </div>
+        <!-- end contact-form -->
+    </div>
+</div>
+<!-- end section-box -->
