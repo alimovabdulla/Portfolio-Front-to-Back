@@ -23,12 +23,21 @@ namespace Portfolio.Helper.DbService
                 AboutMeText = _dbContext.AboutMeText.ToList(),
                 yhp = _dbContext.yHPs.ToList(),
                 profileImage = _dbContext.profileImages.ToList(),
-                portfolioProject  = _dbContext.portfolioProjects.ToList(),
-                latestWorks = _dbContext.latestWorksText.ToList()
+                portfolioProject = _dbContext.portfolioProjects.ToList(),
+                latestWorks = _dbContext.latestWorksText.ToList(),
+                txts = _dbContext.txts.ToList(),
+                blog = _dbContext.blog.ToList(),
+                blogtxtEntities = _dbContext.blogtxtEntities.ToList(),
+                servicesEntity = _dbContext.servicesEntity.ToList(),
+                myClientsLogos = _dbContext.myClientsLogos.ToList(),
+                connectEntities = _dbContext.connectEntities.ToList(),
+                connectTexts = _dbContext.connectTexts.ToList(),
+                educations = _dbContext.educations.ToList(),
+                experiences = _dbContext.experiences.ToList(),
+                resumeTxtEntities = _dbContext.resumeTxtEntities.ToList(),
+                testimonial = _dbContext.testimonial.ToList(),
                
-                
-
-
+                 
 
             };
 

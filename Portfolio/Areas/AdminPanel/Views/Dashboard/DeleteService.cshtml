@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "DeleteService";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>DeleteService</h1>
+
+@model ServicesEntity
+
+<form >
+    <div class="container">
+        <div>
+            <label>Number</label>
+            <input type="text" class="form-control" asp-for="Number" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Text</label>
+            <input type="text" class="form-control" asp-for="Text" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Profession</label>
+            <input type="text" class="form-control" asp-for="Profession" placeholder="URL">
+
+        </div>
+        <div>
+            <label>LogoUrl</label>
+            <input type="text" class="form-control" asp-for="LogoUrl" placeholder="URL">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

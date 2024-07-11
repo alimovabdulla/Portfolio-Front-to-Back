@@ -6,11 +6,9 @@ using Portfolio.Helper.DbService;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ClassDbContext>(opt =>
 {
-
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-
 });
- // Add services to the container.
+// Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<PortfolioDbService>();
 builder.Services.AddScoped<MethodsService>();

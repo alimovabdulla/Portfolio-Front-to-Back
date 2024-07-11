@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "EditConnectEntity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ConnectEntity
+<h1>EditConnectEntity</h1>
+
+
+<form method="post">
+    <div class="container">
+        <div>
+            <label>Address</label>
+            <input type="text" class="form-control" asp-for="Address" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" class="form-control" asp-for="Email" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Number</label>
+            <input type="text" class="form-control" asp-for="Number" placeholder="URL">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

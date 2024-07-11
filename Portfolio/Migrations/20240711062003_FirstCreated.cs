@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Portfolio.Migrations
 {
-    public partial class First : Migration
+    public partial class FirstCreated : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -149,16 +149,16 @@ namespace Portfolio.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "serviceTxt",
+                name: "servicesTxts",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Text = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ServiceText = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_serviceTxt", x => x.Id);
+                    table.PrimaryKey("PK_servicesTxts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -361,7 +361,7 @@ namespace Portfolio.Migrations
                 name: "profileImages");
 
             migrationBuilder.DropTable(
-                name: "serviceTxt");
+                name: "servicesTxts");
 
             migrationBuilder.DropTable(
                 name: "yHPs");

@@ -19,20 +19,28 @@
                                         ">
                 Let's Connect
             </h1>
-            <p style="
+          @foreach (var item in Model.connectTexts)
+            {
+                <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                ">
-                I'm eager to collaborate on new projects. Feel free to reach
-                out with any ideas or questions. Looking forward to
-                connecting!
-            </p>
-            <ul class="list-inline-pills mt-4">
-                <li>Phone: +994 77 524 70 83</li>
-                <li>Email: abdullaalimov555@gmail.com</li>
-                <li>Address: 127.0.0.1</li>
-            </ul>
+                                                    ">
+                     @item.Text
+                </p>
+                <a class="btn btn-primary" asp-action="EditConnectText" asp-route-id="@item.Id">Edit</a>
+
+            }
+            @foreach (var item in Model.connectEntities)
+            {
+                <ul class="list-inline-pills mt-4">
+                    <li>Phone: @item.Number</li>
+                    <li>Email:  @item.Email</li>
+                    <li>Address: @item.Address</li>
+                </ul>
+                <a class="btn btn-primary" asp-action="EditConnectEntity" asp-route-id="@item.Id">Edit</a>
+
+            }
         </div>
     </div>
     <!-- end row -->

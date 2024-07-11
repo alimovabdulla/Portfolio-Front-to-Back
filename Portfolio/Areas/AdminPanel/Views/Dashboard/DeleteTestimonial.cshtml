@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "DeleteTestimonial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>DeleteTestimonial</h1>
+
+@model TestimonialEntity
+
+
+<form  >
+    <div class="container">
+        <div>
+            <label>Text</label>
+            <input type="text" class="form-control" asp-for="Text" placeholder="URL">
+
+        </div>
+        <div>
+            <label>PP</label>
+            <input type="text" class="form-control" asp-for="PPurl" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Profession</label>
+            <input type="text" class="form-control" asp-for="Profession" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" class="form-control" asp-for="Name" placeholder="URL">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

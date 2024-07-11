@@ -19,10 +19,13 @@
                                         ">
                 Education & Experience
             </h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore
-            </p>
+           @foreach (var item in Model.resumeTxtEntities)
+            {
+                <p>
+                     @item.Text
+                </p>
+                <a class="btn btn-primary" asp-action="EditResumeTxt" asp-route-id="@item.Id">Edit</a>
+            }
         </div>
     </div>
     <div class="row g-4 g-lg-5 mt-0">
@@ -32,24 +35,24 @@
                     <i class="bi bi-mortarboard line-height-100"></i>
                 </div>
                 <!-- Education box 1 -->
-                <div class="resume-box">
-                    <span class="resume-date">2020 - 2023</span>
-                    <h5 class="fw-medium">Bachelor Degree of Business</h5>
-                    <span>University of Business</span>
-                </div>
-                <!-- Education box 2 -->
-                <div class="resume-box">
-                    <span class="resume-date">2018 - 2020</span>
-                    <h5 class="fw-medium">Master Degree of Design</h5>
-                    <span>University of IT</span>
-                </div>
-                <!-- Education box 3 -->
-                <div class="resume-box">
-                    <span class="resume-date">2014 - 2018</span>
-                    <h5 class="fw-medium">Bachelor Degree of Design</h5>
-                    <span> University of Design</span>
-                </div>
+              
+               @foreach (var item in Model.educations)
+                {
+                    <div class="resume-box">
+                        <span class="resume-date">@item.Years</span>
+                        <h5 class="fw-medium">@item.Degree</h5>
+                        <span>@item.University</span>
+                    </div>
+
+                    <a class="btn btn-primary" asp-action="EditEducation" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-danger" asp-action="DeleteEducation" asp-route-id="@item.Id">Delete</a>
+
+                }
+                <a class="btn btn-success" asp-action="CreateEducation">Create</a>
+
             </div>
+           
+
         </div>
         <div class="col-12 col-xl-6">
             <div class="resume-wrapper">
@@ -57,23 +60,17 @@
                     <i class="bi bi-briefcase line-height-100"></i>
                 </div>
                 <!-- Employment box 1 -->
-                <div class="resume-box">
-                    <span class="resume-date">2020 - Present</span>
-                    <h5 class="fw-medium">Director of Operations</h5>
-                    <span> FlaTheme</span>
-                </div>
-                <!-- Employment box 2 -->
-                <div class="resume-box">
-                    <span class="resume-date">2018 - 2020</span>
-                    <h5 class="fw-medium">Senior Designer</h5>
-                    <span> FlaTheme</span>
-                </div>
-                <!-- Employment box 3 -->
-                <div class="resume-box">
-                    <span class="resume-date">2015 - 2018</span>
-                    <h5 class="fw-medium">UI & UX Designer</h5>
-                    <span> FlaTheme</span>
-                </div>
+               @foreach (var item in Model.experiences)
+                {
+                    <div class="resume-box">
+                        <span class="resume-date">@item.Years</span>
+                        <h5 class="fw-medium">@item.Position</h5>
+                        <span> @item.Company</span>
+                    </div>
+                    <a class="btn btn-primary" asp-action="EditExperience" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-danger" asp-action="DeleteExperience" asp-route-id="@item.Id">Delete</a>
+                }
+                <a class="btn btn-success" asp-action="CreateExperience">Create</a>
             </div>
         </div>
     </div>

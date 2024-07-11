@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "EditExperience";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>EditExperience</h1>
+@model Experience
+
+<form method="post">
+    <div class="container">
+        <div>
+            <label>Company</label>
+            <input type="text" class="form-control" asp-for="Company" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Position</label>
+            <input type="text" class="form-control" asp-for="Position" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Years</label>
+            <input type="text" class="form-control" asp-for="Years" placeholder="URL">
+
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "EditBlog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model BlogEntity
+<h1>EditBlog</h1>
+
+<form method="post">
+    <div class="container">
+        <div>
+            <label>Image</label>
+            <input type="text" class="form-control" asp-for="ImageUrl" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" class="form-control" asp-for="Name" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Data</label>
+            <input type="text" class="form-control" asp-for="Data" placeholder="URL">
+
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" class="form-control" asp-for="Description" placeholder="URL">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "EditServiceTxt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ServicesTxt
+<h1>EditServiceTxt</h1>
+
+<form method="post">
+    <div class="container">
+        <div>
+            <label>Text</label>
+            <input type="text" class="form-control" asp-for="ServiceText" >
+
+        </div>
+ 
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

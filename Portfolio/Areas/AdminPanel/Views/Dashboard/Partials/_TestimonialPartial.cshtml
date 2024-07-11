@@ -29,111 +29,46 @@
     <div class="swiper testimonial-swiper mt-4">
         <div class="swiper-wrapper">
             <!-- Swiper item 1 -->
-            <div class="swiper-slide">
-                <div class="testimonial-box">
-                    <div class="d-block text-yellow mb-3">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p style="
+           @foreach (var item in Model.testimonial)
+            {
+                <div class="swiper-slide">
+                    <div class="testimonial-box">
+                        <div class="d-block text-yellow mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                ">
-                        Abdulla provided excellent service and delivered our
-                        project on time. His skills in web development are
-                        top-notch. Highly recommend!
-                    </p>
-                </div>
-                <div class="d-flex align-items-center mt-3">
-                    <div class="d-inline-block me-3">
-                        <img class="img-mask-avatar-sm"
-                             src="~/images/Снимок экрана (81).png"
-                             alt=""
-                             data-rjs="2" />
+                                                    ">
+                            @item.Text
+                        </p>
                     </div>
-                    <div class="d-inline-block">
-                        <h5 class="fw-medium m-0 line-height-140">
-                            Ayxan Muslumov
-                        </h5>
-                        <span class="font-small fw-normal">Marketing Specialist</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Swiper item 2 -->
-            <div class="swiper-slide">
-                <div class="testimonial-box">
-                    <div class="d-block text-yellow mb-3">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p style="
-													font-family: Baskervville SC, serif;
-													font-weight: 400;
-													font-style: normal;
-                                                ">
-                        We were impressed by Abdulla's attention to detail and
-                        creativity. He exceeded our expectations and brought our
-                        vision to life. Great experience!
-                    </p>
-                </div>
-                <div class="d-flex align-items-center mt-3">
-                    <div class="d-inline-block me-3">
-                        <img class="img-mask-avatar-sm"
-                             src="~/images/testimonial-2.jpg"
-                             alt=""
-                             data-rjs="2" />
-                    </div>
-                    <div class="d-inline-block">
-                        <h5 class="fw-medium m-0 line-height-140">
-                            Sandra Radford
-                        </h5>
-                        <span class="font-small fw-normal">Project Manager</span>
+                    <div class="d-flex align-items-center mt-3">
+                        <div class="d-inline-block me-3">
+                            <img class="img-mask-avatar-sm"
+                                 src="@item.PPurl"
+                                 alt=""
+                                 data-rjs="2" />
+                        </div>
+                        <div class="d-inline-block">
+                            <h5 class="fw-medium m-0 line-height-140">
+                                @item.Name
+                            </h5>
+                            <span class="font-small fw-normal"> @item.Profession</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Swiper item 3 -->
-            <div class="swiper-slide">
-                <div class="testimonial-box">
-                    <div class="d-block text-yellow mb-3">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p style="
-													font-family: Baskervville SC, serif;
-													font-weight: 400;
-													font-style: normal;
-                                                ">
-                        Working with Abdulla was a pleasure. He was
-                        communicative, professional, and delivered high-quality
-                        work. We look forward to future collaborations.
-                    </p>
-                </div>
-                <div class="d-flex align-items-center mt-3">
-                    <div class="d-inline-block me-3">
-                        <img class="img-mask-avatar-sm"
-                             src="~/images/testimonial-3.jpg"
-                             alt=""
-                             data-rjs="2" />
-                    </div>
-                    <div class="d-inline-block">
-                        <h5 class="fw-medium m-0 line-height-140">
-                            Donald Ang
-                        </h5>
-                        <span class="font-small fw-normal">Developer</span>
-                    </div>
-                </div>
-            </div>
+                <a class="btn btn-primary" asp-action="EditTestimonial" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-danger" asp-action="DeleteTestimonial" asp-route-id="@item.Id">Delete</a>
+            }
+          
         </div>
+        <a class="btn btn-success" asp-action="CreateTestimonial">Create</a>
         <!-- end swiper-wrapper -->
     </div>
     <!-- end swiper -->

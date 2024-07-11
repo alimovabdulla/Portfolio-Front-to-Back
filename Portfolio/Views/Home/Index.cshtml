@@ -171,7 +171,7 @@
 									font-family: Neonderthaw, cursive;
 									font-weight: 400;
 									font-style: normal;
-                                            "
+                                                    "
                                 class="display-2 fw-semi-bold m-0">
                                 @item.Name <span class="stroke-text">@item.Surname</span>
                                 <button class="btn-accept"></button>
@@ -333,7 +333,7 @@
 											font-family: Rubik Doodle Shadow, system-ui;
 											font-weight: 400;
 											font-style: normal;
-                                            ">
+                                                    ">
                                         @item.Text
                                     </h1>
                                 }
@@ -367,7 +367,7 @@
 											font-family: Baskervville SC, serif;
 											font-weight: 400;
 											font-style: normal;
-                                                    "
+                                                            "
                                        class="mt-1">
                                         @item.Text
                                     </p>
@@ -443,15 +443,15 @@
                                         ">
                                     My Latest Works
                                 </h1>
-                              @foreach (var item in Model.latestWorks)
+                                @foreach (var item in Model.latestWorks)
                                 {
                                     <p style="
 											font-family: Baskervville SC, serif;
 											font-weight: 400;
 											font-style: normal;
-                                            "
+                                                    "
                                        class="mt-1">
-                                       @item.Text
+                                        @item.Text
                                     </p>
                                 }
                             </div>
@@ -488,7 +488,7 @@
                         <div class="row g-4 portfolio-grid">
                             <!-- Portfolio Item 1 -->
                             <div class="col-12 col-xl-6 portfolio-item category-1">
-                               @foreach (var item in Model.portfolioProject)
+                                @foreach (var item in Model.portfolioProject)
                                 {
                                     <div class="portfolio-box">
                                         <!-- Image -->
@@ -500,7 +500,7 @@
 												font-family: Emblema One, system-ui;
 												font-weight: 400;
 												font-style: normal;
-                                                "
+                                                        "
                                               class="portfolio-category">Branding</span>
                                         <!-- Caption -->
                                         <div class="portfolio-caption">
@@ -510,140 +510,86 @@
                                 }
                                 <!-- end portfolio-box -->
                             </div>
-                           
+
                         </div>
                         <!-- end row -->
                     </div>
                     <!-- end section-box -->
                     <!-- end Portfolio section -->
                     <!-- Services section -->
+
                     <div class="section-box mt-4" id="services">
-                        <div class="row">
-                            <div class="col-12 col-md-10 col-xl-8">
-                                <h6 style="
+                        @foreach (var item in Model.txts)
+                        {
+                            <div class="row">
+                                <div class="col-12 col-md-10 col-xl-8">
+                                    <h6 style="
 											font-family: Permanent Marker, cursive;
 											font-weight: 400;
 											font-style: normal;
-                                        "
-                                    class="title-heading mb-3"
-                                    data-backdrop-text="Services">
-                                    Services
-                                </h6>
-                                <h1 style="
+                                                    "
+                                        class="title-heading mb-3"
+                                        data-backdrop-text="Services">
+                                        Services
+                                    </h6>
+                                    <h1 style="
 											font-family: Rubik Doodle Shadow, system-ui;
 											font-weight: 400;
 											font-style: normal;
-                                        ">
-                                    What I Do
-                                </h1>
-                                 
+                                                    ">
+                                        What I Do
+                                    </h1>
+
                                     <p style="
 											font-family: Baskervville SC, serif;
 											font-weight: 400;
 											font-style: normal;
-                                            "
+                                                        "
                                        class="mt-1">
-                                       item.Text
+                                        @item.ServiceText
                                     </p>
-                               
+
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="mt-4 mt-lg-5">
-                            <ul class="services-list">
-                                <!-- Services Item 1 -->
-                                <li class="services-item">
-                                    <div class="services-number">
-                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
-                                            01
-                                        </h1>
-                                    </div>
-                                    <div class="services-title icon-xl">
-                                        <i class="bi bi-code-slash"></i>
-                                        <h6 class="mono-heading">Web & Mobile Development</h6>
-                                    </div>
-                                    <div>
-                                        <p style="
+                        }
+
+                        @foreach (var item in Model.servicesEntity)
+                        {
+                            <div class="mt-4 mt-lg-5">
+                                <ul class="services-list">
+
+
+
+                                    <!-- Services Item 4 -->
+                                    <li class="services-item">
+                                        <div class="services-number">
+                                            <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                                                @item.Number
+                                            </h1>
+                                        </div>
+                                        <div class="services-title icon-xl">
+                                            <i class="@item.LogoUrl"></i>
+                                            <h6 class="mono-heading">@item.Profession</h6>
+                                        </div>
+                                        <div>
+                                            <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                ">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt ut labore et
-                                            dolore magna aliqua
-                                        </p>
-                                    </div>
-                                </li>
-                                <!-- Services Item 2 -->
-                                <li class="services-item">
-                                    <div class="services-number">
-                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
-                                            02
-                                        </h1>
-                                    </div>
-                                    <div class="services-title icon-xl">
-                                        <i class="bi bi-laptop"></i>
-                                        <h6 class="mono-heading">Digital Marketing</h6>
-                                    </div>
-                                    <div>
-                                        <p style="
-													font-family: Baskervville SC, serif;
-													font-weight: 400;
-													font-style: normal;
-                                                ">
-                                            Ut enim ad minim veniam, quis nostrud exercitation
-                                            ullamco laboris nisi ut aliquip ex ea commodo consequat
-                                        </p>
-                                    </div>
-                                </li>
-                                <!-- Services Item 3 -->
-                                <li class="services-item">
-                                    <div class="services-number">
-                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
-                                            03
-                                        </h1>
-                                    </div>
-                                    <div class="services-title icon-xl">
-                                        <i class="bi bi-gear"></i>
-                                        <h6 class="mono-heading">Branding & Strategy</h6>
-                                    </div>
-                                    <div>
-                                        <p style="
-													font-family: Baskervville SC, serif;
-													font-weight: 400;
-													font-style: normal;
-                                                ">
-                                            Duis aute irure dolor in reprehenderit in voluptate
-                                            velit esse cillum dolore eu fugiat nulla pariatur.
-                                            Excepteur sint occaecat cupidatat
-                                        </p>
-                                    </div>
-                                </li>
-                                <!-- Services Item 4 -->
-                                <li class="services-item">
-                                    <div class="services-number">
-                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
-                                            04
-                                        </h1>
-                                    </div>
-                                    <div class="services-title icon-xl">
-                                        <i class="bi bi-person"></i>
-                                        <h6 class="mono-heading">User Testing & Personas</h6>
-                                    </div>
-                                    <div>
-                                        <p style="
-													font-family: Baskervville SC, serif;
-													font-weight: 400;
-													font-style: normal;
-                                                ">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                                            elit, sed do eiusmod tempor incididunt ut labore et
-                                            dolore magna aliqua
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                                                                    ">
+                                                @item.Text
+                                            </p>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        }
                     </div>
+
                     <!-- end section-box -->
                     <!-- end Services section -->
                     <!-- Testimonial section -->
@@ -654,7 +600,7 @@
 											font-family: Permanent Marker, cursive;
 											font-weight: 400;
 											font-style: normal;
-                                        "
+                                            "
                                     class="title-heading mb-0"
                                     data-backdrop-text="Testimonial">
                                     What People Say
@@ -688,7 +634,7 @@
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                ">
+                                                    ">
                                             Abdulla provided excellent service and delivered our
                                             project on time. His skills in web development are
                                             top-notch. Highly recommend!
@@ -723,7 +669,7 @@
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                ">
+                                                    ">
                                             We were impressed by Abdulla's attention to detail and
                                             creativity. He exceeded our expectations and brought our
                                             vision to life. Great experience!
@@ -758,7 +704,7 @@
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                ">
+                                                    ">
                                             Working with Abdulla was a pleasure. He was
                                             communicative, professional, and delivered high-quality
                                             work. We look forward to future collaborations.
@@ -794,7 +740,7 @@
 											font-family: Permanent Marker, cursive;
 											font-weight: 400;
 											font-style: normal;
-                                        "
+                                            "
                                     class="title-heading mb-3"
                                     data-backdrop-text="Resume">
                                     Resume
@@ -803,7 +749,7 @@
 											font-family: Rubik Doodle Shadow, system-ui;
 											font-weight: 400;
 											font-style: normal;
-                                        ">
+                                            ">
                                     Education & Experience
                                 </h1>
                                 <p>
@@ -874,7 +820,7 @@
 									font-family: Permanent Marker, cursive;
 									font-weight: 400;
 									font-style: normal;
-                                "
+                                    "
                             class="title-heading mb-4"
                             data-backdrop-text="Clients">
                             My Awesome Clients
@@ -930,7 +876,7 @@
 											font-family: Permanent Marker, cursive;
 											font-weight: 400;
 											font-style: normal;
-                                        "
+                                            "
                                     class="title-heading mb-3"
                                     data-backdrop-text="Blog">
                                     Blog
@@ -939,14 +885,14 @@
 											font-family: Rubik Doodle Shadow, system-ui;
 											font-weight: 400;
 											font-style: normal;
-                                        ">
+                                            ">
                                     Latest Blog Posts
                                 </h1>
                                 <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                ">
+                                                    ">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                     sed do eiusmod tempor incididunt ut labore
                                 </p>
@@ -1041,7 +987,7 @@
 											font-family: Permanent Marker, cursive;
 											font-weight: 400;
 											font-style: normal;
-                                        "
+                                            "
                                     class="title-heading mb-3"
                                     data-backdrop-text="Contact">
                                     Get In Touch
@@ -1050,14 +996,14 @@
 											font-family: Rubik Doodle Shadow, system-ui;
 											font-weight: 400;
 											font-style: normal;
-                                        ">
+                                            ">
                                     Let's Connect
                                 </h1>
                                 <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                ">
+                                                    ">
                                     I'm eager to collaborate on new projects. Feel free to reach
                                     out with any ideas or questions. Looking forward to
                                     connecting!
