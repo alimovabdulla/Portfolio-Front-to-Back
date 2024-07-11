@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "CreateClientsLogo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CreateClientsLogo</h1>
+
+@model MyClientsLogosEntity
+<form method="post">
+    <div class="container">
+        <div>
+            <label>Text</label>
+            <input type="text" class="form-control" asp-for="ImageUrlLogo" placeholder="URL">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

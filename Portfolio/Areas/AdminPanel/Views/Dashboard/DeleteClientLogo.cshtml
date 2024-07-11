@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "DeleteClientLogo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>DeleteClientLogo</h1>
+@model MyClientsLogosEntity
+<form  >
+    <div class="container">
+        <div>
+            <label>Text</label>
+            <input type="text" class="form-control" asp-for="ImageUrlLogo" placeholder="URL">
+
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

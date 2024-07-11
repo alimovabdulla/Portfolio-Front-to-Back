@@ -334,7 +334,7 @@ namespace Portfolio.Areas.AdminPanel.Controllers
         {
             return View();
         }
-        [HttpPost]  
+        [HttpPost]
         public IActionResult CreateEducation(EducationEntity education)
         {
             _classDbContext.Add(education);
@@ -357,7 +357,7 @@ namespace Portfolio.Areas.AdminPanel.Controllers
         [HttpGet]
         public IActionResult DeleteEducation(int id)
         {
-            EducationEntity educationEntity = _classDbContext.educations.FirstOrDefault(x=>x.Id == id);
+            EducationEntity educationEntity = _classDbContext.educations.FirstOrDefault(x => x.Id == id);
             _classDbContext.Remove(educationEntity);
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
@@ -365,13 +365,53 @@ namespace Portfolio.Areas.AdminPanel.Controllers
         [HttpGet]
         public IActionResult DeleteExperience(int id)
         {
-            Experience experience = _classDbContext.experiences.FirstOrDefault(x=>x.Id == id);
+            Experience experience = _classDbContext.experiences.FirstOrDefault(x => x.Id == id);
             _classDbContext.Remove(experience);
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
 
         }
+        [HttpGet]
+        public IActionResult CreateClientsLogo()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateClientsLogo(MyClientsLogosEntity myClientsLogosEntity)
+        {
+            _classDbContext.Add(myClientsLogosEntity);
+            _classDbContext.SaveChanges();
+            return RedirectToAction("Edit");
+        }
+        [HttpGet]
+        public IActionResult DeleteClientLogo(int id)
+        {
+            MyClientsLogosEntity myClientsLogosEntity = _classDbContext.myClientsLogos.FirstOrDefault(x => x.Id == id);
+            _classDbContext.Remove(myClientsLogosEntity);
+            _classDbContext.SaveChanges();
+            return RedirectToAction("Edit");
+        }
+        [HttpGet]
+        public IActionResult CreateAbout()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateAbout(BlogEntity blogEntity)
+        {
+            _classDbContext.Add(blogEntity);
+            _classDbContext.SaveChanges();
+            return RedirectToAction("Edit");
+        }
+        [HttpGet]
+        public IActionResult DeleteAbout(int id)
+        {
+            BlogEntity blogEntity = _classDbContext.blog.FirstOrDefault(x => x.Id == id);
+            _classDbContext.Remove(blogEntity);
+            _classDbContext.SaveChanges();
+            return RedirectToAction("Edit");
 
+        }
     }
 
 }

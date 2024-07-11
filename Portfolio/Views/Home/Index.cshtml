@@ -620,111 +620,43 @@
                         <!-- end row -->
                         <div class="swiper testimonial-swiper mt-4">
                             <div class="swiper-wrapper">
-                                <!-- Swiper item 1 -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box">
-                                        <div class="d-block text-yellow mb-3">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </div>
-                                        <p style="
+                                 
+                               @foreach (var item in Model.testimonial)
+                                {
+                                    <!-- Swiper item 1 -->
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-box">
+                                            <div class="d-block text-yellow mb-3">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                    ">
-                                            Abdulla provided excellent service and delivered our
-                                            project on time. His skills in web development are
-                                            top-notch. Highly recommend!
-                                        </p>
-                                    </div>
-                                    <div class="d-flex align-items-center mt-3">
-                                        <div class="d-inline-block me-3">
-                                            <img class="img-mask-avatar-sm"
-                                                 src="~/images/Снимок экрана (81).png"
-                                                 alt=""
-                                                 data-rjs="2" />
+                                                        ">
+                                                @item.Text
+                                            </p>
                                         </div>
-                                        <div class="d-inline-block">
-                                            <h5 class="fw-medium m-0 line-height-140">
-                                                Ayxan Muslumov
-                                            </h5>
-                                            <span class="font-small fw-normal">Marketing Specialist</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Swiper item 2 -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box">
-                                        <div class="d-block text-yellow mb-3">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </div>
-                                        <p style="
-													font-family: Baskervville SC, serif;
-													font-weight: 400;
-													font-style: normal;
-                                                    ">
-                                            We were impressed by Abdulla's attention to detail and
-                                            creativity. He exceeded our expectations and brought our
-                                            vision to life. Great experience!
-                                        </p>
-                                    </div>
-                                    <div class="d-flex align-items-center mt-3">
-                                        <div class="d-inline-block me-3">
-                                            <img class="img-mask-avatar-sm"
-                                                 src="~/images/testimonial-2.jpg"
-                                                 alt=""
-                                                 data-rjs="2" />
-                                        </div>
-                                        <div class="d-inline-block">
-                                            <h5 class="fw-medium m-0 line-height-140">
-                                                Sandra Radford
-                                            </h5>
-                                            <span class="font-small fw-normal">Project Manager</span>
+                                        <div class="d-flex align-items-center mt-3">
+                                            <div class="d-inline-block me-3">
+                                                <img class="img-mask-avatar-sm"
+                                                     src="@item.PPurl"
+                                                     alt=""
+                                                     data-rjs="2" />
+                                            </div>
+                                            <div class="d-inline-block">
+                                                <h5 class="fw-medium m-0 line-height-140">
+                                                    @item.Name
+                                                </h5>
+                                                <span class="font-small fw-normal"> @item.Profession</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- Swiper item 3 -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box">
-                                        <div class="d-block text-yellow mb-3">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </div>
-                                        <p style="
-													font-family: Baskervville SC, serif;
-													font-weight: 400;
-													font-style: normal;
-                                                    ">
-                                            Working with Abdulla was a pleasure. He was
-                                            communicative, professional, and delivered high-quality
-                                            work. We look forward to future collaborations.
-                                        </p>
-                                    </div>
-                                    <div class="d-flex align-items-center mt-3">
-                                        <div class="d-inline-block me-3">
-                                            <img class="img-mask-avatar-sm"
-                                                 src="~/images/testimonial-3.jpg"
-                                                 alt=""
-                                                 data-rjs="2" />
-                                        </div>
-                                        <div class="d-inline-block">
-                                            <h5 class="fw-medium m-0 line-height-140">
-                                                Donald Ang
-                                            </h5>
-                                            <span class="font-small fw-normal">Developer</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                }
                             </div>
                             <!-- end swiper-wrapper -->
                         </div>
@@ -734,30 +666,32 @@
                     <!-- end Services section -->
                     <!-- Resume section -->
                     <div class="section-box mt-4" id="resume">
-                        <div class="row">
-                            <div class="col-12 col-md-10 col-xl-8">
-                                <h6 style="
+                       @foreach (var item in Model.resumeTxtEntities)
+                        {
+                            <div class="row">
+                                <div class="col-12 col-md-10 col-xl-8">
+                                    <h6 style="
 											font-family: Permanent Marker, cursive;
 											font-weight: 400;
 											font-style: normal;
-                                            "
-                                    class="title-heading mb-3"
-                                    data-backdrop-text="Resume">
-                                    Resume
-                                </h6>
-                                <h1 style="
+                                                "
+                                        class="title-heading mb-3"
+                                        data-backdrop-text="Resume">
+                                        Resume
+                                    </h6>
+                                    <h1 style="
 											font-family: Rubik Doodle Shadow, system-ui;
 											font-weight: 400;
 											font-style: normal;
-                                            ">
-                                    Education & Experience
-                                </h1>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore
-                                </p>
+                                                ">
+                                        Education & Experience
+                                    </h1>
+                                    <p>
+                                    @item.Text
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        }
                         <div class="row g-4 g-lg-5 mt-0">
                             <div class="col-12 col-xl-6">
                                 <div class="resume-wrapper">
@@ -765,23 +699,15 @@
                                         <i class="bi bi-mortarboard line-height-100"></i>
                                     </div>
                                     <!-- Education box 1 -->
-                                    <div class="resume-box">
-                                        <span class="resume-date">2020 - 2023</span>
-                                        <h5 class="fw-medium">Bachelor Degree of Business</h5>
-                                        <span>University of Business</span>
-                                    </div>
-                                    <!-- Education box 2 -->
-                                    <div class="resume-box">
-                                        <span class="resume-date">2018 - 2020</span>
-                                        <h5 class="fw-medium">Master Degree of Design</h5>
-                                        <span>University of IT</span>
-                                    </div>
-                                    <!-- Education box 3 -->
-                                    <div class="resume-box">
-                                        <span class="resume-date">2014 - 2018</span>
-                                        <h5 class="fw-medium">Bachelor Degree of Design</h5>
-                                        <span> University of Design</span>
-                                    </div>
+                                    @foreach (var item in Model.educations)
+                                    {
+                                        <div class="resume-box">
+                                            <span class="resume-date"> @item.Years</span>
+                                            <h5 class="fw-medium">@item.Degree</h5>
+                                            <span>@item.University</span>
+                                        </div>
+                                    }
+                                    
                                 </div>
                             </div>
                             <div class="col-12 col-xl-6">
@@ -790,23 +716,15 @@
                                         <i class="bi bi-briefcase line-height-100"></i>
                                     </div>
                                     <!-- Employment box 1 -->
-                                    <div class="resume-box">
-                                        <span class="resume-date">2020 - Present</span>
-                                        <h5 class="fw-medium">Director of Operations</h5>
-                                        <span> FlaTheme</span>
-                                    </div>
-                                    <!-- Employment box 2 -->
-                                    <div class="resume-box">
-                                        <span class="resume-date">2018 - 2020</span>
-                                        <h5 class="fw-medium">Senior Designer</h5>
-                                        <span> FlaTheme</span>
-                                    </div>
-                                    <!-- Employment box 3 -->
-                                    <div class="resume-box">
-                                        <span class="resume-date">2015 - 2018</span>
-                                        <h5 class="fw-medium">UI & UX Designer</h5>
-                                        <span> FlaTheme</span>
-                                    </div>
+                                  @foreach (var item in Model.experiences)
+                                    {
+                                        <div class="resume-box">
+                                            <span class="resume-date">@item.Years</span>
+                                            <h5 class="fw-medium">@item.Position</h5>
+                                            <span> @item.Company</span>
+                                        </div>
+                                    }
+                                    
                                 </div>
                             </div>
                         </div>
@@ -828,41 +746,15 @@
                         <div class="swiper clients-swiper">
                             <div class="swiper-wrapper">
                                 <!-- Client box 1 -->
-                                <div class="swiper-slide client-box">
-                                    <a href="#">
-                                        <img src="~/images/client-1-light.png" alt="" />
-                                    </a>
-                                </div>
-                                <!-- Client box 2 -->
-                                <div class="swiper-slide client-box">
-                                    <a href="#">
-                                        <img src="~/images/client-2-light.png" alt="" />
-                                    </a>
-                                </div>
-                                <!-- Client box 3 -->
-                                <div class="swiper-slide client-box">
-                                    <a href="#">
-                                        <img src="~/images/client-3-light.png" alt="" />
-                                    </a>
-                                </div>
-                                <!-- Client box 4 -->
-                                <div class="swiper-slide client-box">
-                                    <a href="#">
-                                        <img src="~/images/client-4-light.png" alt="" />
-                                    </a>
-                                </div>
-                                <!-- Client box 5 -->
-                                <div class="swiper-slide client-box">
-                                    <a href="#">
-                                        <img src="~/images/client-5-light.png" alt="" />
-                                    </a>
-                                </div>
-                                <!-- Client box 6 -->
-                                <div class="swiper-slide client-box">
-                                    <a href="#">
-                                        <img src="~/images/client-6-light.png" alt="" />
-                                    </a>
-                                </div>
+                                @foreach (var item in Model.myClientsLogos)
+                                {
+                                    <div class="swiper-slide client-box">
+                                        <a href="#">
+                                            <img src="@item.ImageUrlLogo" alt="" />
+                                        </a>
+                                    </div>
+
+                                }
                             </div>
                         </div>
                     </div>
@@ -888,94 +780,44 @@
                                             ">
                                     Latest Blog Posts
                                 </h1>
-                                <p style="
+                                @foreach (var item in Model.blogtxtEntities)
+                                {
+                                    
+                                    <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                    ">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore
-                                </p>
+                                                        ">
+                                         @item.Text
+                                    </p>
+                                }
                             </div>
                         </div>
-                        <div class="mt-4 mt-lg-5">
-                            <!-- Blog Post box 1 -->
-                            <div class="blog-post-box">
-                                <div class="blog-post-img">
-                                    <a href="#">
-                                        <img src="~/images/blog-post-1.jpg" alt="" />
-                                    </a>
-                                    <div class="blog-post-category">
-                                        <a href="#">Experience</a>
+                        @foreach (var item in Model.blog)
+                        {
+                            <div class="mt-4 mt-lg-5">
+                                <!-- Blog Post box 1 -->
+                                <div class="blog-post-box">
+                                    <div class="blog-post-img">
+                                        <a href="#">
+                                            <img src="@item.ImageUrl" alt="" />
+                                        </a>
+                                        <div class="blog-post-category">
+                                            <a href="#">@item.Name</a>
+                                        </div>
+                                    </div>
+                                    <div class="blog-post-caption">
+                                        <p class="mb-2">@item.Data</p>
+                                        <h2>
+                                            <a class="link-decoration" href="blog-single-dark.html">@item.Description</a>
+                                        </h2>
+                                        <a class="button button-sm button-outline mt-2"
+                                           href="blog-single-dark.html">Read more</a>
                                     </div>
                                 </div>
-                                <div class="blog-post-caption">
-                                    <p class="mb-2">Posted on Aug 28</p>
-                                    <h2>
-                                        <a class="link-decoration" href="blog-single-dark.html">4 years of working from home</a>
-                                    </h2>
-                                    <a class="button button-sm button-outline mt-2"
-                                       href="blog-single-dark.html">Read more</a>
-                                </div>
+
                             </div>
-                            <!-- Blog Post box 2 -->
-                            <div class="blog-post-box">
-                                <div class="blog-post-img">
-                                    <a href="#">
-                                        <img src="~/images/blog-post-2.jpg" alt="" />
-                                    </a>
-                                    <div class="blog-post-category">
-                                        <a href="#">Health</a>
-                                    </div>
-                                </div>
-                                <div class="blog-post-caption">
-                                    <p class="mb-2">Posted on Aug 27</p>
-                                    <h2>
-                                        <a class="link-decoration" href="blog-single-dark.html">Importance of outdoor times</a>
-                                    </h2>
-                                    <a class="button button-sm button-outline mt-2"
-                                       href="blog-single-dark.html">Read more</a>
-                                </div>
-                            </div>
-                            <!-- Blog Post box 3 -->
-                            <div class="blog-post-box">
-                                <div class="blog-post-img">
-                                    <a href="#">
-                                        <img src="~/images/blog-post-3.jpg" alt="" />
-                                    </a>
-                                    <div class="blog-post-category">
-                                        <a href="#">Foods & Drinks</a>
-                                    </div>
-                                </div>
-                                <div class="blog-post-caption">
-                                    <p class="mb-2">Posted on Aug 26</p>
-                                    <h2>
-                                        <a class="link-decoration" href="blog-single-dark.html">Fun drinks to make at home</a>
-                                    </h2>
-                                    <a class="button button-sm button-outline mt-2"
-                                       href="blog-single-dark.html">Read more</a>
-                                </div>
-                            </div>
-                            <!-- Blog Post box 4 -->
-                            <div class="blog-post-box">
-                                <div class="blog-post-img">
-                                    <a href="#">
-                                        <img src="~/images/blog-post-4.jpg" alt="" />
-                                    </a>
-                                    <div class="blog-post-category">
-                                        <a href="#">Health</a>
-                                    </div>
-                                </div>
-                                <div class="blog-post-caption">
-                                    <p class="mb-2">Posted on Aug 25</p>
-                                    <h2>
-                                        <a class="link-decoration" href="blog-single-dark.html">Benefits of eating healthy</a>
-                                    </h2>
-                                    <a class="button button-sm button-outline mt-2"
-                                       href="blog-single-dark.html">Read more</a>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                     <!-- end section-box -->
                     <!-- end Blog section -->
@@ -999,20 +841,24 @@
                                             ">
                                     Let's Connect
                                 </h1>
-                                <p style="
+                               @foreach (var item in Model.connectTexts)
+                                {
+                                    <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                    ">
-                                    I'm eager to collaborate on new projects. Feel free to reach
-                                    out with any ideas or questions. Looking forward to
-                                    connecting!
-                                </p>
-                                <ul class="list-inline-pills mt-4">
-                                    <li>Phone: +994 77 524 70 83</li>
-                                    <li>Email: abdullaalimov555@gmail.com</li>
-                                    <li>Address: 127.0.0.1</li>
-                                </ul>
+                                                        ">
+                                         @item.Text
+                                    </p>
+                                }
+                               @foreach (var item in Model.connectEntities)
+                                {
+                                    <ul class="list-inline-pills mt-4">
+                                        <li>Phone:  @item.Number</li>
+                                        <li>Email: @item.Email</li>
+                                        <li>Address:  @item.Address</li>
+                                    </ul>
+                                }
                             </div>
                         </div>
                         <!-- end row -->

@@ -22,9 +22,11 @@
                     </a>
                 </div>
                 <a class="btn btn-primary" asp-action="EditMyClientsLogos" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-danger" asp-action="DeleteClientLogo" asp-route-id="@item.Id">Delete</a>
             }
           
         </div>
     </div>
+    <a class="btn btn-success" asp-action="CreateClientsLogo">Create</a>
 </div>
 <!-- end section-box -->

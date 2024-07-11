@@ -26,7 +26,7 @@
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                        ">
+                                                            ">
                     @item.Text
                 </p>
                 <a class="btn btn-primary" asp-action="EditBlogtxt" asp-route-id="@item.Id">Edit</a>
@@ -54,10 +54,15 @@
                     <a class="button button-sm button-outline mt-2"
                        href="blog-single-dark.html">Read more</a>
                 </div>
-                <a class="btn btn-primary" asp-action="EditBlog" asp-route-id="@item.Id">Edit</a>
+
             </div>
+            <a class="btn btn-primary" asp-action="EditBlog" asp-route-id="@item.Id">Edit</a>
+
+            <a class="btn btn-danger" asp-action="DeleteAbout" asp-route-id="@item.Id">Delete</a>
         }
 
     </div>
+    <a class="btn btn-success" asp-action="CreateAbout">Create</a>
+
 </div>
 <!-- end section-box -->
