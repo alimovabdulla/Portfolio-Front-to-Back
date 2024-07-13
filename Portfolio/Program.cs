@@ -1,13 +1,25 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Areas.AdminPanel.Helper.MethodsService;
 using Portfolio.DbContext;
 using Portfolio.Helper.DbService;
+using Portfolio.Models.User;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ClassDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
+builder.Services.AddIdentity<AppUser,  IdentityRole>(opt =>
+{
+    opt.Password.RequireDigit = false;
+    opt.Password.RequireLowercase = false;
+    opt.Password.RequireNonAlphanumeric = false;
+    opt.Password.RequiredLength = 6;
+    opt.Password.RequiredUniqueChars = 0;
+    opt.Password.RequireUppercase = false;
+
+}).AddDefaultTokenProviders().AddEntityFrameworkStores<ClassDbContext>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<PortfolioDbService>();
@@ -26,12 +38,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
 	"areas",
-			"{area:exists}/{controller=Home}/{action=Edit}/{id?}");
+			"{area:exists}/{controller=Account}/{action=Login}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

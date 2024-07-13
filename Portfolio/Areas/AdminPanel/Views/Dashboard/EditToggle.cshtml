@@ -1,0 +1,39 @@
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+@{
+    ViewData["Title"] = "EditToggle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ToggleEntity
+<h1>EditToggle</h1>
+<form method="post">
+    <div class="container">
+        <div>
+            <label>Number</label>
+            <input type="text" class="form-control" asp-for="Number" placeholder="Text">
+
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" class="form-control" asp-for="Email" placeholder="Text">
+
+        </div>
+        <div>
+            <label>WhatsApp</label>
+            <input type="text" class="form-control" asp-for="WhatsApp" placeholder="Text">
+
+        </div>
+        <div>
+            <label>Instagram</label>
+            <input type="text" class="form-control" asp-for="Instagram" placeholder="Text">
+
+        </div>
+        <div>
+            <label>Telegram</label>
+            <input type="text" class="form-control" asp-for="Telegram" placeholder="Text">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

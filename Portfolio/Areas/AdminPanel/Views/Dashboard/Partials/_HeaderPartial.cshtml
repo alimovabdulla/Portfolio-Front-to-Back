@@ -5,20 +5,18 @@
         <div class="col-12 col-lg-4 col-xl-3 order-lg-2 text-end">
             <div class="d-inline-flex align-items-center">
                 <!-- Social Links -->
-                <ul class="list-inline d-inline-block mono-heading fw-medium">
-                    <li>
-                        <a class="link-decoration" href="#">FB</a>
-                    </li>
-                    <li>
-                        <a class="link-decoration" href="#">TW</a>
-                    </li>
-                    <li>
-                        <a class="link-decoration" href="#">IG</a>
-                    </li>
-                    <li>
-                        <a class="link-decoration" href="#">In</a>
-                    </li>
-                </ul>
+               @foreach (var item in Model.headerSocialLinks)
+                {
+                    <ul class="list-inline d-inline-block mono-heading fw-medium">
+                        <li>
+                            <a class="link-decoration" href="@item.GitHub">GitHub</a>
+                        </li>
+                        <li>
+                            <a class="link-decoration" href="@item.Linkedin">Linkedin</a>
+                        </li>
+                        <a class="btn btn-primary" asp-action="EditHeaderLinks" asp-route-id="@item.Id">Edit</a>
+                    </ul>
+                }
                 <!-- Toggle Menu Button -->
                 <button class="menu-dots">
                     <span></span>

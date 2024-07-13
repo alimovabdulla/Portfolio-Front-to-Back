@@ -152,6 +152,7 @@ namespace Portfolio.Areas.AdminPanel.Helper.MethodsService
                 old.Data = newBlogEntity.Data;
                 old.ImageUrl = newBlogEntity.ImageUrl;
                 old.Name = newBlogEntity.Name;
+                old.Href = newBlogEntity.Href;
                 _classDbContext.SaveChanges();
             }
         }
@@ -240,6 +241,7 @@ namespace Portfolio.Areas.AdminPanel.Helper.MethodsService
             MyClientsLogosEntity old = _classDbContext.myClientsLogos.FirstOrDefault(x => x.Id == newMyClientsLogosEntity.Id);
 
             old.ImageUrlLogo = newMyClientsLogosEntity.ImageUrlLogo;
+            old.Href = newMyClientsLogosEntity.Href;
 
 
             _classDbContext.SaveChanges();
@@ -320,24 +322,44 @@ namespace Portfolio.Areas.AdminPanel.Helper.MethodsService
         // Methods for ServicesTxt
         public ServicesTxt GetServicesTxt(int id)
         {
-            return _classDbContext.txts.FirstOrDefault(x=>x.Id==id);
+            return _classDbContext.txts.FirstOrDefault(x => x.Id == id);
         }
         public void UpdateServiceTxt(ServicesTxt newServicesTxt)
         {
-            ServicesTxt old = _classDbContext.txts.FirstOrDefault(x=>x.Id == newServicesTxt.Id);
+            ServicesTxt old = _classDbContext.txts.FirstOrDefault(x => x.Id == newServicesTxt.Id);
             old.ServiceText = newServicesTxt.ServiceText;
             _classDbContext.SaveChanges();
         }
+        public ToggleEntity GetToggles(int id)
+        {
+            return _classDbContext.toggleEntities.FirstOrDefault(x => x.Id == id);
+        }
+        public void UpdateToggle(ToggleEntity newToggle)
+        {
+            ToggleEntity old = _classDbContext.toggleEntities.FirstOrDefault(x => x.Id == newToggle.Id);
+            old.Number = newToggle.Number;
+            old.WhatsApp = newToggle.WhatsApp;
+            old.Instagram = newToggle.Instagram;
+            old.Email = newToggle.Email;
+            old.Telegram = newToggle.Telegram;
+            _classDbContext.SaveChanges();
 
+        }
+
+
+        public HeaderSocialLinks GetHeaderSocialLinks(int id)
+        {
+            return _classDbContext.HeaderSocialLinks.FirstOrDefault(x=>x.Id==id);
+
+        }
+        public void UpdateHeaderSocialLinks(HeaderSocialLinks newHeaderSocialLinks)
+        {
+            HeaderSocialLinks old = _classDbContext.HeaderSocialLinks.FirstOrDefault(x=>x.Id == newHeaderSocialLinks.Id);
+            old.Linkedin = newHeaderSocialLinks.Linkedin;
+            old.GitHub = newHeaderSocialLinks.GitHub;
+            _classDbContext.SaveChanges();
+        }
     }
-
-
-
-
-
-
-
-
 
 
 

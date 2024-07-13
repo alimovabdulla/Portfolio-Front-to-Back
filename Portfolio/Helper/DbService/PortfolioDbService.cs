@@ -36,6 +36,8 @@ namespace Portfolio.Helper.DbService
                 experiences = _dbContext.experiences.ToList(),
                 resumeTxtEntities = _dbContext.resumeTxtEntities.ToList(),
                 testimonial = _dbContext.testimonial.ToList(),
+                toggleEntities = _dbContext.toggleEntities.ToList(),
+                headerSocialLinks = _dbContext.HeaderSocialLinks.ToList()
                
                  
 

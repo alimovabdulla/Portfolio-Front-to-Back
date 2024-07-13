@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Models;
+using Portfolio.Models.User;
 
 namespace Portfolio.DbContext
 {
@@ -32,6 +33,9 @@ namespace Portfolio.DbContext
         public DbSet<EducationEntity> educations { get; set; }
         public DbSet<ConnectText> connectTexts { get; set; }
         public DbSet<ConnectEntity> connectEntities { get; set; }
+        public DbSet<ToggleEntity> toggleEntities { get; set; }
+        public DbSet<HeaderSocialLinks> HeaderSocialLinks { get; set; }
+        public DbSet<AppUser> appUsers { get; set; }
         
     }
 

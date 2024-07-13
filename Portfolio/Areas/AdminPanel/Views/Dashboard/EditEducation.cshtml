@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 @{
     ViewData["Title"] = "EditEducation";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,17 +13,20 @@
     <div class="container">
         <div>
             <label>University</label>
-            <input type="text" class="form-control" asp-for="University" placeholder="URL">
+            <input type="text" class="form-control" asp-for="University" 
+            
+            
+            >
 
         </div>
         <div>
             <label>Degree</label>
-            <input type="text" class="form-control" asp-for="Degree" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Degree" placeholder="Text">
 
         </div>
         <div>
             <label>Years</label>
-            <input type="text" class="form-control" asp-for="Years" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Years" placeholder="Text">
 
         </div>
 

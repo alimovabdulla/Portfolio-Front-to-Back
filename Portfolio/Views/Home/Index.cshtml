@@ -91,29 +91,34 @@
             <i class="bi bi-x"></i>
         </button>
         <!-- end Close button -->
-        <h6 class="mono-heading fw-normal mb-2">Phone:</h6>
-        <h4 class="fw-medium">+(976) 12 34 9999</h4>
-        <div class="mt-4">
-            <h6 class="mono-heading fw-normal mb-2">Email:</h6>
-            <h4 class="fw-medium">flatheme@gmail.com</h4>
-            <ul class="list-inline-sm mt-3">
-                <li>
-                    <a class="button-circle button-circle-sm" href="#">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a class="button-circle button-circle-sm" href="#">
-                        <i class="bi bi-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a class="button-circle button-circle-sm" href="#">
-                        <i class="bi bi-youtube"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        @foreach (var item in Model.toggleEntities)
+        {
+            <h6 class="mono-heading fw-normal mb-2">Phone:</h6>
+            <h4 class="fw-medium">@item.Number</h4>
+            <div class="mt-4">
+                <h6 class="mono-heading fw-normal mb-2">Email:</h6>
+                <h4 class="fw-medium"> @item.Email</h4>
+                <ul class="list-inline-sm mt-3">
+                    <li>
+                        <a class="button-circle button-circle-sm" href="@item.WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="button-circle button-circle-sm" href="@item.Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="button-circle button-circle-sm" href="@item.Telegram">
+                            <i class="bi bi-telegram"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        }
         <div class="mt-4 mt-lg-5">
             <ul class="list-circle">
                 <li>
@@ -141,20 +146,18 @@
                 <div class="col-12 col-lg-4 col-xl-3 order-lg-2 text-end">
                     <div class="d-inline-flex align-items-center">
                         <!-- Social Links -->
-                        <ul class="list-inline d-inline-block mono-heading fw-medium">
-                            <li>
-                                <a class="link-decoration" href="#">FB</a>
-                            </li>
-                            <li>
-                                <a class="link-decoration" href="#">TW</a>
-                            </li>
-                            <li>
-                                <a class="link-decoration" href="#">IG</a>
-                            </li>
-                            <li>
-                                <a class="link-decoration" href="#">In</a>
-                            </li>
-                        </ul>
+                        @foreach (var item in Model.headerSocialLinks)
+                        {
+                            <ul class="list-inline d-inline-block mono-heading fw-medium">
+                                <li>
+                                    <a class="link-decoration" href="@item.GitHub">GitHub</a>
+                                </li>
+                                <li>
+                                    <a class="link-decoration" href="@item.Linkedin">Linkedin</a>
+                                </li>
+
+                            </ul>
+                        }
                         <!-- Toggle Menu Button -->
                         <button class="menu-dots">
                             <span></span>
@@ -171,7 +174,7 @@
 									font-family: Neonderthaw, cursive;
 									font-weight: 400;
 									font-style: normal;
-                                                    "
+                                                        "
                                 class="display-2 fw-semi-bold m-0">
                                 @item.Name <span class="stroke-text">@item.Surname</span>
                                 <button class="btn-accept"></button>
@@ -333,7 +336,7 @@
 											font-family: Rubik Doodle Shadow, system-ui;
 											font-weight: 400;
 											font-style: normal;
-                                                    ">
+                                                        ">
                                         @item.Text
                                     </h1>
                                 }
@@ -367,7 +370,7 @@
 											font-family: Baskervville SC, serif;
 											font-weight: 400;
 											font-style: normal;
-                                                            "
+                                                                "
                                        class="mt-1">
                                         @item.Text
                                     </p>
@@ -449,7 +452,7 @@
 											font-family: Baskervville SC, serif;
 											font-weight: 400;
 											font-style: normal;
-                                                    "
+                                                        "
                                        class="mt-1">
                                         @item.Text
                                     </p>
@@ -500,7 +503,7 @@
 												font-family: Emblema One, system-ui;
 												font-weight: 400;
 												font-style: normal;
-                                                        "
+                                                            "
                                               class="portfolio-category">Branding</span>
                                         <!-- Caption -->
                                         <div class="portfolio-caption">
@@ -527,7 +530,7 @@
 											font-family: Permanent Marker, cursive;
 											font-weight: 400;
 											font-style: normal;
-                                                    "
+                                                        "
                                         class="title-heading mb-3"
                                         data-backdrop-text="Services">
                                         Services
@@ -536,7 +539,7 @@
 											font-family: Rubik Doodle Shadow, system-ui;
 											font-weight: 400;
 											font-style: normal;
-                                                    ">
+                                                        ">
                                         What I Do
                                     </h1>
 
@@ -544,7 +547,7 @@
 											font-family: Baskervville SC, serif;
 											font-weight: 400;
 											font-style: normal;
-                                                        "
+                                                            "
                                        class="mt-1">
                                         @item.ServiceText
                                     </p>
@@ -577,14 +580,15 @@
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                                    ">
+                                                                        ">
                                                 @item.Text
                                             </p>
                                         </div>
+                                    
                                     </li>
 
 
-
+                                    <hr align="center" width="auto" size="2" color="#0000" />
                                 </ul>
                             </div>
                         }
@@ -620,8 +624,8 @@
                         <!-- end row -->
                         <div class="swiper testimonial-swiper mt-4">
                             <div class="swiper-wrapper">
-                                 
-                               @foreach (var item in Model.testimonial)
+
+                                @foreach (var item in Model.testimonial)
                                 {
                                     <!-- Swiper item 1 -->
                                     <div class="swiper-slide">
@@ -637,7 +641,7 @@
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                        ">
+                                                            ">
                                                 @item.Text
                                             </p>
                                         </div>
@@ -666,7 +670,7 @@
                     <!-- end Services section -->
                     <!-- Resume section -->
                     <div class="section-box mt-4" id="resume">
-                       @foreach (var item in Model.resumeTxtEntities)
+                        @foreach (var item in Model.resumeTxtEntities)
                         {
                             <div class="row">
                                 <div class="col-12 col-md-10 col-xl-8">
@@ -674,7 +678,7 @@
 											font-family: Permanent Marker, cursive;
 											font-weight: 400;
 											font-style: normal;
-                                                "
+                                                    "
                                         class="title-heading mb-3"
                                         data-backdrop-text="Resume">
                                         Resume
@@ -683,11 +687,11 @@
 											font-family: Rubik Doodle Shadow, system-ui;
 											font-weight: 400;
 											font-style: normal;
-                                                ">
+                                                    ">
                                         Education & Experience
                                     </h1>
                                     <p>
-                                    @item.Text
+                                        @item.Text
                                     </p>
                                 </div>
                             </div>
@@ -707,7 +711,7 @@
                                             <span>@item.University</span>
                                         </div>
                                     }
-                                    
+
                                 </div>
                             </div>
                             <div class="col-12 col-xl-6">
@@ -716,7 +720,7 @@
                                         <i class="bi bi-briefcase line-height-100"></i>
                                     </div>
                                     <!-- Employment box 1 -->
-                                  @foreach (var item in Model.experiences)
+                                    @foreach (var item in Model.experiences)
                                     {
                                         <div class="resume-box">
                                             <span class="resume-date">@item.Years</span>
@@ -724,7 +728,7 @@
                                             <span> @item.Company</span>
                                         </div>
                                     }
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -782,13 +786,13 @@
                                 </h1>
                                 @foreach (var item in Model.blogtxtEntities)
                                 {
-                                    
+
                                     <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                        ">
-                                         @item.Text
+                                                            ">
+                                        @item.Text
                                     </p>
                                 }
                             </div>
@@ -841,17 +845,17 @@
                                             ">
                                     Let's Connect
                                 </h1>
-                               @foreach (var item in Model.connectTexts)
+                                @foreach (var item in Model.connectTexts)
                                 {
                                     <p style="
 													font-family: Baskervville SC, serif;
 													font-weight: 400;
 													font-style: normal;
-                                                        ">
-                                         @item.Text
+                                                            ">
+                                        @item.Text
                                     </p>
                                 }
-                               @foreach (var item in Model.connectEntities)
+                                @foreach (var item in Model.connectEntities)
                                 {
                                     <ul class="list-inline-pills mt-4">
                                         <li>Phone:  @item.Number</li>
@@ -890,7 +894,7 @@
                                     <textarea name="message"
                                               id="message"
                                               placeholder="Message"></textarea>
-                                    <button class="button button-md" type="submit">
+                                    <button     class="button button-md" type="submit">
                                         Send Message
                                     </button>
                                 </form>

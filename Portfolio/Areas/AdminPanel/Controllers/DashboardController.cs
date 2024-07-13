@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Portfolio.Areas.AdminPanel.Helper.MethodsService;
 using Portfolio.DbContext;
 using Portfolio.Helper.DbService;
@@ -7,6 +8,7 @@ using Portfolio.ViewModels;
 
 namespace Portfolio.Areas.AdminPanel.Controllers
 {
+    [Authorize]
     [Area("AdminPanel")]
     public class DashboardController : Controller
     {
@@ -411,6 +413,30 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
 
+        }
+        public IActionResult EditToggle(int id)
+        {
+            ToggleEntity exiting = _methodsService.GetToggles(id);
+            return View(exiting);
+        }
+        [HttpPost]
+        public IActionResult EditToggle(ToggleEntity toggleEntity)
+        {
+            _methodsService.UpdateToggle(toggleEntity);
+            return RedirectToAction("Edit");
+
+        }
+        [HttpGet]
+        public IActionResult EditHeaderLinks(int id)
+        {
+            HeaderSocialLinks exiting  = _methodsService.GetHeaderSocialLinks(id);
+            return View(exiting);
+        }
+        [HttpPost]
+        public IActionResult EditHeaderLinks(HeaderSocialLinks headerSocialLinks)
+        {
+            _methodsService.UpdateHeaderSocialLinks(headerSocialLinks);
+            return RedirectToAction("Edit");
         }
     }
 

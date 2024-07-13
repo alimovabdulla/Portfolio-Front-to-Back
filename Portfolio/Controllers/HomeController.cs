@@ -1,10 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using Portfolio.DbContext;
 using Portfolio.Helper.DbService;
 using Portfolio.Models;
 using Portfolio.ViewModels;
 using System.Diagnostics;
-
+using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 namespace Portfolio.Controllers
 {
     public class HomeController : Controller
@@ -18,15 +23,11 @@ namespace Portfolio.Controllers
             _dbContext = classDbContext;
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             PortfolioViewModel model = _dbService.GetPortfolioViewModel();
-
-
             return View(model);
         }
-
 
     }
 }

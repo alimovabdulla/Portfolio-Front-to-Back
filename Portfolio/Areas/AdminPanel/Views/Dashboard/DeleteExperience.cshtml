@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 @{
     ViewData["Title"] = "DeleteExperience";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,17 +14,20 @@
     <div class="container">
         <div>
             <label>Company</label>
-            <input type="text" class="form-control" asp-for="Company" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Company" 
+            
+            
+            >
 
         </div>
         <div>
             <label>Position</label>
-            <input type="text" class="form-control" asp-for="Position" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Position" placeholder="Text">
 
         </div>
         <div>
             <label>Years</label>
-            <input type="text" class="form-control" asp-for="Years" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Years" placeholder="Text">
 
         </div>
 

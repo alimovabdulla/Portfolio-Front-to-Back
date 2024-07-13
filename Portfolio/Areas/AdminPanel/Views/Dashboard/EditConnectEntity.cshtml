@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 @{
     ViewData["Title"] = "EditConnectEntity";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,17 +13,20 @@
     <div class="container">
         <div>
             <label>Address</label>
-            <input type="text" class="form-control" asp-for="Address" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Address" 
+            
+            
+            >
 
         </div>
         <div>
             <label>Email</label>
-            <input type="text" class="form-control" asp-for="Email" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Email" placeholder="Text">
 
         </div>
         <div>
             <label>Number</label>
-            <input type="text" class="form-control" asp-for="Number" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Number" placeholder="Text">
 
         </div>
 

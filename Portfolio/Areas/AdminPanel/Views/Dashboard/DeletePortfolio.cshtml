@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 @{
     ViewData["Title"] = "DeletePortfolio";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,22 +19,26 @@
     <div class="container">
         <div>
             <label>Image</label>
-            <input type="text" class="form-control" asp-for="ImageUrl" placeholder="URL">
+            <input type="text" class="form-control" asp-for="ImageUrl" 
+            
+            
+            
+            >
 
         </div>
         <div>
             <label>Text</label>
-            <input type="text" class="form-control" asp-for="ImageText" placeholder="URL">
+            <input type="text" class="form-control" asp-for="ImageText" placeholder="Text">
 
         </div>
         <div>
             <label>Href</label>
-            <input type="text" class="form-control" asp-for="Href" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Href" placeholder="Text">
 
         </div>
         <div>
             <label>Href</label>
-            <input type="text" class="form-control" asp-for="Category" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Category" placeholder="Text">
 
         </div>
 

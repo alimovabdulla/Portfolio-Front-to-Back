@@ -1,0 +1,26 @@
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+@{
+    ViewData["Title"] = "EditHeaderLinks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HeaderSocialLinks
+<h1>EditHeaderLinks</h1>
+
+<form method="post">
+    <div class="container">
+        <div>
+            <label>GitHub</label>
+            <input type="text" class="form-control" asp-for="GitHub" placeholder="Text">
+
+        </div>
+        <div>
+            <label>Linkedin</label>
+            <input type="text" class="form-control" asp-for="Linkedin" placeholder="Text">
+
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

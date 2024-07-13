@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 @{
     ViewData["Title"] = "EditMyClientsLogos";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,7 +13,13 @@
     <div class="container">
         <div>
             <label>Text</label>
-            <input type="text" class="form-control" asp-for="ImageUrlLogo" placeholder="URL">
+            <input type="text" class="form-control" asp-for="ImageUrlLogo" 
+            >
+
+        </div>
+        <div>
+            <label>Href</label>
+            <input type="text" class="form-control" asp-for="Href" placeholder="Text">
 
         </div>
       

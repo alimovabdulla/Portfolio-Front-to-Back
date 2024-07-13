@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 @{
     ViewData["Title"] = "CreateServices";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,22 +14,29 @@
     <div class="container">
         <div>
             <label>Number</label>
-            <input type="text" class="form-control" asp-for="Number" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Number" 
+            
+            
+            
+            
+            
+            
+            >
 
         </div>
         <div>
             <label>Text</label>
-            <input type="text" class="form-control" asp-for="Text" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Text" placeholder="Text">
 
         </div>
         <div>
             <label>Profession</label>
-            <input type="text" class="form-control" asp-for="Profession" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Profession" placeholder="Text">
 
         </div>
         <div>
             <label>LogoUrl</label>
-            <input type="text" class="form-control" asp-for="LogoUrl" placeholder="URL">
+            <input type="text" class="form-control" asp-for="LogoUrl" placeholder="Text">
 
         </div>
         <button type="submit" class="btn btn-primary">Save</button>

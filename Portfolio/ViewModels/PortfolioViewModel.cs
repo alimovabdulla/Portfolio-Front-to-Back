@@ -1,4 +1,5 @@
-﻿using Portfolio.Models;
+﻿using FluentEmail.Core.Models;
+using Portfolio.Models;
 
 namespace Portfolio.ViewModels
 {
@@ -24,6 +25,9 @@ namespace Portfolio.ViewModels
         public List<EducationEntity> educations { get; set; }
         public List<ConnectText> connectTexts { get; set; }
         public List<ConnectEntity> connectEntities { get; set; }
+        public List<ToggleEntity> toggleEntities { get; set; }
+        public List<HeaderSocialLinks> headerSocialLinks { get; set; }
+        public List<EmailData> emailData { get; set; }
 
 
     }

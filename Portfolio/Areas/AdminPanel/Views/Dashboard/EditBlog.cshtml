@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 @{
     ViewData["Title"] = "EditBlog";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,22 +13,27 @@
     <div class="container">
         <div>
             <label>Image</label>
-            <input type="text" class="form-control" asp-for="ImageUrl" placeholder="URL">
+            <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Text">
 
         </div>
         <div>
             <label>Name</label>
-            <input type="text" class="form-control" asp-for="Name" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Name" placeholder="Text">
 
         </div>
         <div>
             <label>Data</label>
-            <input type="text" class="form-control" asp-for="Data" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Data" placeholder="Text">
 
         </div>
         <div>
             <label>Description</label>
-            <input type="text" class="form-control" asp-for="Description" placeholder="URL">
+            <input type="text" class="form-control" asp-for="Description" placeholder="Text">
+
+        </div>
+        <div>
+            <label>Href</label>
+            <input type="text" class="form-control" asp-for="Href" placeholder="Text">
 
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
