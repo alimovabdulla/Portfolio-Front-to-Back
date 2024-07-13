@@ -1,0 +1,39 @@
+﻿<div class="section-box mt-4" id="contact">
+    <div class="row">
+        <div class="col-12 col-md-10 col-xl-8">
+            <h6 style="
+											font-family: Permanent Marker, cursive;
+											font-weight: 400;
+											font-style: normal;
+                                            "
+                class="title-heading mb-3"
+                data-backdrop-text="Contact">
+                Get In Touch
+            </h6>
+            <h1 style="
+											font-family: Rubik Doodle Shadow, system-ui;
+											font-weight: 400;
+											font-style: normal;
+                                            ">
+                Let's Connect
+            </h1>
+            @foreach (var item in Model.connectTexts)
+            {
+                <p style="
+													font-family: Baskervville SC, serif;
+													font-weight: 400;
+													font-style: normal;
+                                                                        ">
+                    @item.Text
+                </p>
+            }
+            @foreach (var item in Model.connectEntities)
+            {
+                <ul class="list-inline-pills mt-4">
+                    <li>Phone:  @item.Number</li>
+                    <li>Email: @item.Email</li>
+                    <li>Address:  @item.Address</li>
+                </ul>
+            }
+        </div>
+    </div>

@@ -1,0 +1,26 @@
+﻿<div class="section-box mt-4" id="clients">
+    <h6 style="
+									font-family: Permanent Marker, cursive;
+									font-weight: 400;
+									font-style: normal;
+                                    "
+        class="title-heading mb-4"
+        data-backdrop-text="Clients">
+        My Awesome Clients
+    </h6>
+    <div class="swiper clients-swiper">
+        <div class="swiper-wrapper">
+            <!-- Client box 1 -->
+            @foreach (var item in Model.myClientsLogos)
+            {
+                <div class="swiper-slide client-box">
+                    <a href="#">
+                        <img src="@item.ImageUrlLogo" alt="" />
+                    </a>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+<!-- end section-box -->

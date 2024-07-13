@@ -7,9 +7,11 @@ using Portfolio.Models.User;
 
 namespace Portfolio.Areas.AdminPanel.Controllers
 {
+    
     [Area("AdminPanel")]
     public class AccountController : Controller
     {
+        
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ClassDbContext _classDbContext;

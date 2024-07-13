@@ -1,0 +1,66 @@
+﻿<div class="section-box mt-4" id="resume">
+    @foreach (var item in Model.resumeTxtEntities)
+    {
+        <div class="row">
+            <div class="col-12 col-md-10 col-xl-8">
+                <h6 style="
+											font-family: Permanent Marker, cursive;
+											font-weight: 400;
+											font-style: normal;
+                                                                "
+                    class="title-heading mb-3"
+                    data-backdrop-text="Resume">
+                    Resume
+                </h6>
+                <h1 style="
+											font-family: Rubik Doodle Shadow, system-ui;
+											font-weight: 400;
+											font-style: normal;
+                                                                ">
+                    Education & Experience
+                </h1>
+                <p>
+                    @item.Text
+                </p>
+            </div>
+        </div>
+    }
+    <div class="row g-4 g-lg-5 mt-0">
+        <div class="col-12 col-xl-6">
+            <div class="resume-wrapper">
+                <div class="icon-2xl mb-3">
+                    <i class="bi bi-mortarboard line-height-100"></i>
+                </div>
+                <!-- Education box 1 -->
+                @foreach (var item in Model.educations)
+                {
+                    <div class="resume-box">
+                        <span class="resume-date"> @item.Years</span>
+                        <h5 class="fw-medium">@item.Degree</h5>
+                        <span>@item.University</span>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="col-12 col-xl-6">
+            <div class="resume-wrapper">
+                <div class="icon-2xl mb-3">
+                    <i class="bi bi-briefcase line-height-100"></i>
+                </div>
+                <!-- Employment box 1 -->
+                @foreach (var item in Model.experiences)
+                {
+                    <div class="resume-box">
+                        <span class="resume-date">@item.Years</span>
+                        <h5 class="fw-medium">@item.Position</h5>
+                        <span> @item.Company</span>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>
+<!-- end section-box -->

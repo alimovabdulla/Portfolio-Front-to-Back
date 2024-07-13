@@ -1,23 +1,20 @@
-﻿<head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
+﻿ 
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+ 
 
 @using Portfolio.ViewModels
 
-
-
+ 
 @model PortfolioViewModel
 
 <!DOCTYPE html>
 <html lang="en">
 <!-- Mirrored from gray.flatheme.net/index-dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Jun 2024 11:07:16 GMT -->
-@Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_HeadPartial.cshtml");
+@Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_HeadPartial.cshtml")
 
 <body class="theme-dark" data-preloader="true">
     <!-- Background Vertical lines -->
@@ -29,16 +26,16 @@
     </div>
     <!-- end Background Vertical lines -->
     <!-- Toggle Menu Content -->
-    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ToggleMenuPartial.cshtml");
+    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ToggleMenuPartial.cshtml")
     <!-- end Toggle Menu Content -->
 
     <div class="container">
-        @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_HeaderPartial.cshtml");
+        @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_HeaderPartial.cshtml")
 
         <div class="row g-4 g-lg-5">
             <div class="col-12 col-lg-4 col-xl-3">
                 <!-- Main Nav -->
-                @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_MainNavPartial.cshtml");
+                @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_MainNavPartial.cshtml")
                 <!-- end Main Nav -->
             </div>
             <!-- end col -->
@@ -48,34 +45,38 @@
                      data-bs-spy="scroll"
                      data-bs-target=".section-nav">
                     <!-- About section -->
-                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_AboutPartial.cshtml");
+                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_AboutPartial.cshtml")
                     <!-- end About section -->
                     <!-- Portfolio section -->
-                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_PortfolioSectionPartial.cshtml");
+                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_PortfolioSectionPartial.cshtml")
                     <!-- end Portfolio section -->
                     <!-- Services section -->
-                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ServicesPartial.cshtml");
+                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ServicesPartial.cshtml")
                     <!-- end Services section -->
                     <!-- Testimonial section -->
-                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_TestimonialPartial.cshtml");
+                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_TestimonialPartial.cshtml")
                     <!-- end Services section -->
                     <!-- Resume section -->
-                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ResumePartial.cshtml");
+                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ResumePartial.cshtml")
                     <!-- end Resume section -->
                     <!-- Clients section -->
-                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ClientPartial.cshtml");
+                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ClientPartial.cshtml")
                     <!-- end Clients section -->
                     <!-- Blog section -->
-                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_BlogPartial.cshtml");
+                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_BlogPartial.cshtml")
                     <!-- end Blog section -->
                     <!-- Contact section -->
-                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ContactPartial.cshtml");
+                    @Html.Partial("~/Areas/AdminPanel/Views/Dashboard/Partials/_ContactPartial.cshtml")
                     <!-- end Contact section -->
                     <!-- Google Maps -->
-                    <div id="map1"
-                         class="gmap gmap-sm mt-4 border-radius box-shadow"
-                         data-latitude="51.513569"
-                         data-longitude="-0.123443"></div>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6237210.07129742!2d26.98879931183617!3d40.24213506411478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4087d881047c17f9%3A0x3fc5fcf337dcf39e!2zS2F6xLFtIEthcmFiZWtpciwgxZ5odC4gRmVyaXQgU2suIE5vOjMxLCA1NTA3MCDEsGxrYWTEsW0vU2Ftc3Vu!5e0!3m2!1str!2str!4v1720117526515!5m2!1str!2str"
+                            width="100%"
+                            height="450"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <!-- end Google Maps -->
                 </div>
                 <!-- end tab-content -->
@@ -86,7 +87,7 @@
     </div>
     <!-- end main container -->
     <!-- JavaScripts -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBi4SV0ZRVGoIDH2E00YtJ8Gvg67eaPG5A"></script>
+ 
     <script src="~/plugins/jquery.min.js"></script>
     <script src="~/plugins/plugins.js"></script>
     <script src="~/js/functions.js"></script>

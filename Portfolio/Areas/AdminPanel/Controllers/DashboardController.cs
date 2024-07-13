@@ -8,8 +8,9 @@ using Portfolio.ViewModels;
 
 namespace Portfolio.Areas.AdminPanel.Controllers
 {
-    [Authorize]
+
     [Area("AdminPanel")]
+    [Authorize]
     public class DashboardController : Controller
     {
         private readonly ClassDbContext _classDbContext;
@@ -23,141 +24,134 @@ namespace Portfolio.Areas.AdminPanel.Controllers
         }
 
 
+        // Общий метод редактирования портфолио
         public IActionResult Edit()
         {
             PortfolioViewModel model = _dbService.GetPortfolioViewModel();
             return View(model);
         }
+
+        // Редактирование имени
         [HttpGet]
         public IActionResult EditName(int id)
         {
             NameSurnameEntity exist = _methodsService.GetNameSurnameById(id);
             return View(exist);
         }
+
         [HttpPost]
         public IActionResult EditName(NameSurnameEntity newname)
         {
             _methodsService.UpdateNameSurname(newname);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование информации обо мне
         [HttpGet]
         public IActionResult EditAbout(int id)
         {
             AboutMeEntity exist = _methodsService.GetAboutMeById(id);
             return View(exist);
         }
+
         [HttpPost]
         public IActionResult EditAbout(AboutMeEntity newabout)
         {
             _methodsService.UpdateAboutMe(newabout);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование профиля
         [HttpGet]
         public IActionResult EditPP(int id)
         {
             ProfileImage exist = _methodsService.GetProfileImageById(id);
             return View(exist);
         }
+
         [HttpPost]
         public IActionResult EditPP(ProfileImage newimage)
         {
             _methodsService.UpdateProfileImage(newimage);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование языков
         [HttpGet]
         public IActionResult EditLanguages(int id)
         {
             LgProsent existing = _methodsService.GetLgProsentById(id);
             return View(existing);
         }
+
         [HttpPost]
         public IActionResult EditLanguages(LgProsent newlg)
         {
             _methodsService.UpdateLgProsent(newlg);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование текста обо мне
         [HttpGet]
         public IActionResult EditAboutTxt(int id)
         {
             AboutMeTextEntity exiting = _methodsService.GetAboutText(id);
             return View(exiting);
         }
+
         [HttpPost]
         public IActionResult EditAboutTxt(AboutMeTextEntity newabout)
         {
-
             _methodsService.UpdateAboutText(newabout);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование YHP
         [HttpGet]
         public IActionResult EditYhp(int id)
         {
             YHP exiting = _methodsService.GetYhp(id);
             return View(exiting);
         }
+
         [HttpPost]
         public IActionResult EditYhp(YHP newyhp)
         {
             _methodsService.UpdateYhp(newyhp);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование портфолио
         [HttpGet]
         public IActionResult EditPortfolio(int id)
         {
             PortfolioProject exiting = _methodsService.GetPortfolioProject(id);
             return View(exiting);
         }
+
         [HttpPost]
         public IActionResult EditPortfolio(PortfolioProject newportfolio)
         {
             _methodsService.UpdatePortfolioProject(newportfolio);
             return RedirectToAction("Edit");
         }
-        [HttpGet]
-        public IActionResult CreatePortfolio()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult CreatePortfolio(PortfolioProject newportfolioProject)
-        {
-            _classDbContext.Add(newportfolioProject);
-            _classDbContext.SaveChanges();
-            return RedirectToAction("Edit");
-        }
-        [HttpGet]
-        public IActionResult DeletePortfolio(int id)
-        {
-            PortfolioProject portfolioProject = _classDbContext.portfolioProjects.FirstOrDefault(p => p.Id == id);
-            _classDbContext.Remove(portfolioProject);
-            _classDbContext.SaveChanges();
-            return RedirectToAction("Edit");
-        }
+
+        // Редактирование работ
         [HttpGet]
         public IActionResult EditWorks(int id)
         {
             LatestsEntity exiting = _methodsService.GetLatestText(id);
             return View(exiting);
         }
+
         [HttpPost]
         public IActionResult EditWorks(LatestsEntity newtextEntity)
         {
             _methodsService.UpdateLatests(newtextEntity);
             return RedirectToAction("Edit");
         }
-        public IActionResult EditLatestText(int id)
-        {
-            LatestsEntity existing = _methodsService.GetLatestText(id);
-            return View(existing);
-        }
 
-        [HttpPost]
-        public IActionResult EditLatestText(LatestsEntity newLatestsEntity)
-        {
-            _methodsService.UpdateLatests(newLatestsEntity);
-            return RedirectToAction("Edit");
-        }
-
+        // Редактирование блога
         public IActionResult EditBlog(int id)
         {
             BlogEntity existing = _methodsService.GetBlog(id);
@@ -171,6 +165,7 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             return RedirectToAction("Edit");
         }
 
+        // Редактирование текста блога
         public IActionResult EditBlogtxt(int id)
         {
             BlogtxtEntity existing = _methodsService.GetBlogtxt(id);
@@ -184,6 +179,7 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             return RedirectToAction("Edit");
         }
 
+        // Редактирование отзывов
         public IActionResult EditTestimonial(int id)
         {
             TestimonialEntity existing = _methodsService.GetTestimonial(id);
@@ -197,6 +193,7 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             return RedirectToAction("Edit");
         }
 
+        // Редактирование услуг
         public IActionResult EditServicesEntity(int id)
         {
             ServicesEntity existing = _methodsService.GetServicesEntity(id);
@@ -210,6 +207,7 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             return RedirectToAction("Edit");
         }
 
+        // Редактирование резюме
         public IActionResult EditResumeTxt(int id)
         {
             ResumeTxtEntity existing = _methodsService.GetResumeTxt(id);
@@ -223,6 +221,7 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             return RedirectToAction("Edit");
         }
 
+        // Редактирование логотипов клиентов
         public IActionResult EditMyClientsLogos(int id)
         {
             MyClientsLogosEntity existing = _methodsService.GetMyClientsLogos(id);
@@ -236,6 +235,7 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             return RedirectToAction("Edit");
         }
 
+        // Редактирование опыта
         public IActionResult EditExperience(int id)
         {
             Experience existing = _methodsService.GetExperience(id);
@@ -248,61 +248,140 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _methodsService.UpdateExperience(newExperience);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование образования
         public IActionResult EditEducation(int id)
         {
             EducationEntity existing = _methodsService.GetEducation(id);
             return View(existing);
         }
+
         [HttpPost]
         public IActionResult EditEducation(EducationEntity newEducationEntity)
         {
             _methodsService.UpdateEducation(newEducationEntity);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование текста связи
         public IActionResult EditConnectText(int id)
         {
             ConnectText existing = _methodsService.GetConnectText(id);
             return View(existing);
         }
+
         [HttpPost]
         public IActionResult EditConnectText(ConnectText newConnectText)
         {
             _methodsService.UpdateConnectText(newConnectText);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование сущности связи
         public IActionResult EditConnectEntity(int id)
         {
             ConnectEntity existing = _methodsService.GetConnectEntity(id);
             return View(existing);
         }
+
         [HttpPost]
         public IActionResult EditConnectEntity(ConnectEntity newConnectEntity)
         {
             _methodsService.UpdateConnectEntity(newConnectEntity);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование текста услуг
         [HttpGet]
         public IActionResult EditServiceTxt(int id)
         {
             ServicesTxt exiting = _methodsService.GetServicesTxt(id);
             return View(exiting);
         }
+
         [HttpPost]
         public IActionResult EditServiceTxt(ServicesTxt newServicesTxt)
         {
             _methodsService.UpdateServiceTxt(newServicesTxt);
             return RedirectToAction("Edit");
         }
+
+        // Редактирование тумблера
+        public IActionResult EditToggle(int id)
+        {
+            ToggleEntity exiting = _methodsService.GetToggles(id);
+            return View(exiting);
+        }
+
+        [HttpPost]
+        public IActionResult EditToggle(ToggleEntity toggleEntity)
+        {
+            _methodsService.UpdateToggle(toggleEntity);
+            return RedirectToAction("Edit");
+        }
+
+        // Редактирование ссылок в шапке
         [HttpGet]
-        public IActionResult CreateServices() { return View(); }
+        public IActionResult EditHeaderLinks(int id)
+        {
+            HeaderSocialLinks exiting = _methodsService.GetHeaderSocialLinks(id);
+            return View(exiting);
+        }
+
+        [HttpPost]
+        public IActionResult EditHeaderLinks(HeaderSocialLinks headerSocialLinks)
+        {
+            _methodsService.UpdateHeaderSocialLinks(headerSocialLinks);
+            return RedirectToAction("Edit");
+        }
+
+        //Create And Delete
+
+        // Портфолио
+
+        // Создание портфолио
+        [HttpGet]
+        public IActionResult CreatePortfolio()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreatePortfolio(PortfolioProject newportfolioProject)
+        {
+            _classDbContext.Add(newportfolioProject);
+            _classDbContext.SaveChanges();
+            return RedirectToAction("Edit");
+        }
+
+        // Удаление портфолио
+        [HttpGet]
+        public IActionResult DeletePortfolio(int id)
+        {
+            PortfolioProject portfolioProject = _classDbContext.portfolioProjects.FirstOrDefault(p => p.Id == id);
+            _classDbContext.Remove(portfolioProject);
+            _classDbContext.SaveChanges();
+            return RedirectToAction("Edit");
+        }
+
+        // Услуги
+
+        // Создание услуги
+        [HttpGet]
+        public IActionResult CreateServices()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult CreateServices(ServicesEntity newServices)
         {
             _classDbContext.Add(newServices);
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
-
         }
+
+        // Удаление услуги
         [HttpGet]
         public IActionResult DeleteService(int id)
         {
@@ -311,11 +390,16 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
         }
+
+        // Отзывы
+
+        // Создание отзыва
         [HttpGet]
         public IActionResult CreateTestimonial()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult CreateTestimonial(TestimonialEntity newTestimonial)
         {
@@ -323,6 +407,8 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
         }
+
+        // Удаление отзыва
         [HttpGet]
         public IActionResult DeleteTestimonial(int id)
         {
@@ -331,11 +417,16 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
         }
+
+        // Образование
+
+        // Создание образования
         [HttpGet]
         public IActionResult CreateEducation()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult CreateEducation(EducationEntity education)
         {
@@ -343,19 +434,8 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
         }
-        [HttpGet]
-        public IActionResult CreateExperience()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult CreateExperience(Experience experience)
-        {
 
-            _classDbContext.Add(experience);
-            _classDbContext.SaveChanges();
-            return RedirectToAction("Edit");
-        }
+        // Удаление образования
         [HttpGet]
         public IActionResult DeleteEducation(int id)
         {
@@ -364,6 +444,25 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
         }
+
+        // Опыт
+
+        // Создание опыта
+        [HttpGet]
+        public IActionResult CreateExperience()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateExperience(Experience experience)
+        {
+            _classDbContext.Add(experience);
+            _classDbContext.SaveChanges();
+            return RedirectToAction("Edit");
+        }
+
+        // Удаление опыта
         [HttpGet]
         public IActionResult DeleteExperience(int id)
         {
@@ -371,13 +470,17 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.Remove(experience);
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
-
         }
+
+        // Логотипы клиентов
+
+        // Создание логотипа клиента
         [HttpGet]
         public IActionResult CreateClientsLogo()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult CreateClientsLogo(MyClientsLogosEntity myClientsLogosEntity)
         {
@@ -385,59 +488,10 @@ namespace Portfolio.Areas.AdminPanel.Controllers
             _classDbContext.SaveChanges();
             return RedirectToAction("Edit");
         }
-        [HttpGet]
-        public IActionResult DeleteClientLogo(int id)
-        {
-            MyClientsLogosEntity myClientsLogosEntity = _classDbContext.myClientsLogos.FirstOrDefault(x => x.Id == id);
-            _classDbContext.Remove(myClientsLogosEntity);
-            _classDbContext.SaveChanges();
-            return RedirectToAction("Edit");
-        }
-        [HttpGet]
-        public IActionResult CreateAbout()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult CreateAbout(BlogEntity blogEntity)
-        {
-            _classDbContext.Add(blogEntity);
-            _classDbContext.SaveChanges();
-            return RedirectToAction("Edit");
-        }
-        [HttpGet]
-        public IActionResult DeleteAbout(int id)
-        {
-            BlogEntity blogEntity = _classDbContext.blog.FirstOrDefault(x => x.Id == id);
-            _classDbContext.Remove(blogEntity);
-            _classDbContext.SaveChanges();
-            return RedirectToAction("Edit");
 
-        }
-        public IActionResult EditToggle(int id)
-        {
-            ToggleEntity exiting = _methodsService.GetToggles(id);
-            return View(exiting);
-        }
-        [HttpPost]
-        public IActionResult EditToggle(ToggleEntity toggleEntity)
-        {
-            _methodsService.UpdateToggle(toggleEntity);
-            return RedirectToAction("Edit");
 
-        }
-        [HttpGet]
-        public IActionResult EditHeaderLinks(int id)
-        {
-            HeaderSocialLinks exiting  = _methodsService.GetHeaderSocialLinks(id);
-            return View(exiting);
-        }
-        [HttpPost]
-        public IActionResult EditHeaderLinks(HeaderSocialLinks headerSocialLinks)
-        {
-            _methodsService.UpdateHeaderSocialLinks(headerSocialLinks);
-            return RedirectToAction("Edit");
-        }
+
+
     }
 
 }

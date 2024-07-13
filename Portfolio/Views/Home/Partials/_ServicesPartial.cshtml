@@ -1,0 +1,74 @@
+﻿<div class="section-box mt-4" id="services">
+    @foreach (var item in Model.txts)
+    {
+        <div class="row">
+            <div class="col-12 col-md-10 col-xl-8">
+                <h6 style="
+											font-family: Permanent Marker, cursive;
+											font-weight: 400;
+											font-style: normal;
+                                                                    "
+                    class="title-heading mb-3"
+                    data-backdrop-text="Services">
+                    Services
+                </h6>
+                <h1 style="
+											font-family: Rubik Doodle Shadow, system-ui;
+											font-weight: 400;
+											font-style: normal;
+                                                                    ">
+                    What I Do
+                </h1>
+
+                <p style="
+											font-family: Baskervville SC, serif;
+											font-weight: 400;
+											font-style: normal;
+                                                                        "
+                   class="mt-1">
+                    @item.ServiceText
+                </p>
+
+            </div>
+
+        </div>
+    }
+
+    @foreach (var item in Model.servicesEntity)
+    {
+        <div class="mt-4 mt-lg-5">
+            <ul class="services-list">
+
+
+
+                <!-- Services Item 4 -->
+                <li class="services-item">
+                    <div class="services-number">
+                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                            @item.Number
+                        </h1>
+                    </div>
+                    <div class="services-title icon-xl">
+                        <i class="@item.LogoUrl"></i>
+                        <h6 class="mono-heading">@item.Profession</h6>
+                    </div>
+                    <div>
+                        <p style="
+													font-family: Baskervville SC, serif;
+													font-weight: 400;
+													font-style: normal;
+                                                                                    ">
+                            @item.Text
+                        </p>
+                    </div>
+
+                </li>
+
+
+                <hr align="center" width="auto" size="2" color="#0000" />
+            </ul>
+        </div>
+    }
+</div>
+
+<!-- end section-box -->

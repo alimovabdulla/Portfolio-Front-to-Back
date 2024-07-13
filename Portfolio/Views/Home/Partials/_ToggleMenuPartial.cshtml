@@ -1,0 +1,98 @@
+﻿<div class="toggle-menu">
+    <!-- Close button -->
+    <button class="toggle-close">
+        <i class="bi bi-x"></i>
+    </button>
+    <!-- end Close button -->
+    @foreach (var item in Model.toggleEntities)
+    {
+        <h6 class="mono-heading fw-normal mb-2">Phone:</h6>
+        <h4 class="fw-medium">@item.Number</h4>
+        <div class="mt-4">
+            <h6 class="mono-heading fw-normal mb-2">Email:</h6>
+            <h4 class="fw-medium"> @item.Email</h4>
+            <ul class="list-inline-sm mt-3">
+                <li>
+                    <a class="button-circle button-circle-sm" href="@item.WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="button-circle button-circle-sm" href="@item.Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="button-circle button-circle-sm" href="@item.Telegram">
+                        <i class="bi bi-telegram"></i>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    }
+    <div class="mt-4 mt-lg-5">
+        <ul class="list-circle">
+            <li>
+                <a class="mono-heading link-decoration" href="index-2.html">Light Version</a>
+            </li>
+            <li>
+                <a class="mono-heading link-decoration" href="elements.html">Elements</a>
+            </li>
+            <li>
+                <a class="mono-heading link-decoration"
+                   href="https://1.envato.market/JzRka7"
+                   target="_blank">Buy Gray</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tm-bottom">
+        <p>&copy; 2023 FlaTheme.</p>
+    </div>
+</div>
+<!-- end Toggle Menu Content -->
+
+<div class="container">
+    <div id="header">
+        <div class="row">
+            <div class="col-12 col-lg-4 col-xl-3 order-lg-2 text-end">
+                <div class="d-inline-flex align-items-center">
+                    <!-- Social Links -->
+                    @foreach (var item in Model.headerSocialLinks)
+                    {
+                        <ul class="list-inline d-inline-block mono-heading fw-medium">
+                            <li>
+                                <a class="link-decoration" href="@item.GitHub">GitHub</a>
+                            </li>
+                            <li>
+                                <a class="link-decoration" href="@item.Linkedin">Linkedin</a>
+                            </li>
+
+                        </ul>
+                    }
+                    <!-- Toggle Menu Button -->
+                    <button class="menu-dots">
+                        <span></span>
+                    </button>
+                    <!-- end Toggle Menu Button -->
+                </div>
+            </div>
+            <!-- end col -->
+            <div class="col-12 col-lg-8 order-lg-1 col-xl-9">
+                <div class="py-4">
+                    @foreach (var item in Model.nameSurname)
+                    {
+                        <h1 style="
+									font-family: Neonderthaw, cursive;
+									font-weight: 400;
+									font-style: normal;
+                                                                        "
+                            class="display-2 fw-semi-bold m-0">
+                            @item.Name <span class="stroke-text">@item.Surname</span>
+                            <button class="btn-accept"></button>
+                        </h1>
+                    }
+
+                </div>
+            </div>
